@@ -1,0 +1,27 @@
+.drug_selection {
+    display: grid;
+    grid-template-areas: "1 1 1 1 1 1";
+    gap: 1vh 3vw;
+    padding: 1vh 3vw;
+}
+
+.access_selection {
+    display: grid;
+    grid-template-areas: "1 1 1 1";
+    gap: 2vw;
+    padding: 1vh 3vw;
+}
+
+button {
+    height: 4vh;
+}
+
+.isActive{
+    background-color: rgb(125, 204, 125);
+}
+
+.vials {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}

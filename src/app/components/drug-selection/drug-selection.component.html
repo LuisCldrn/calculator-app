@@ -1,0 +1,41 @@
+<div class="access_selection">
+    <button *ngFor="let acess of routeOfAdmin" >{{acess}}</button>
+</div>
+<div class="drug_selection">
+    <button *ngFor="let drug of drugListService.drugList" (click)="selectDrug(drug)" class="{{drug.active}}" >{{drug.name}}</button>
+</div>
+<div class="dose-inputs">
+    <label for="Dose">Enter Dose in GM:</label>
+    <input type="text" #doseInput (keyup.enter)="calculateDose(doseInput.value)" >
+</div>
+<div class="freq-inputs">
+    <label for="frequnecy">Select the frequency:</label>
+    <select #freq name="frequnecy" id="" (change)="print(freq.value)" >
+        <option  value="every 4 weeks">every week</option>
+        <option  value="every 4 weeks">every 2 weeks</option>
+        <option  value="every 4 weeks">every 3 weeks</option>
+        <option  value="every 4 weeks">every 4 weeks</option>
+        <option  value="every 4 weeks">twice every week</option>
+    </select>
+</div>
+<div class="inf-input">
+    <label for="infusions">Number of infusions being entered:</label>
+    <input #infusion type="number">
+</div>
+<div class="ds-input">
+    <label for="infusions">Day Supply being entered:</label>
+    <input #daySupply type="number">
+</div>
+
+<button (click)="calculateDose(doseInput.value)">Calculate Dose</button>
+<br>
+Calculated Dose in mls: {{doseMls}}
+<button (click)="calculateVials(+infusion.value, +daySupply.value)" >calulate vials</button>
+<span *ngFor="let vial of vialsToUse" >use vial:{{vial}}</span>
+<p *ngIf="errorMsg.length>0" >{{errorMsg}}</p>
+<div class="vials" *ngFor="let vial of vialDisplay" >
+    <p>{{vial.amount}}</p>
+    <p>{{vial.size}}gm Vial</p>
+    <p>{{vial.commentLine}}</p>
+    <p>{{vial.dispenseMls}}</p>
+</div>
