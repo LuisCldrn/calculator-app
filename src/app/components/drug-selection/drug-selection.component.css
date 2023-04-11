@@ -1,27 +1,133 @@
-.drug_selection {
-    display: grid;
-    grid-template-areas: "1 1 1 1 1 1";
-    gap: 1vh 3vw;
-    padding: 1vh 3vw;
+* {
+    margin: 0 1vw;
 }
 
-.access_selection {
-    display: grid;
-    grid-template-areas: "1 1 1 1";
-    gap: 2vw;
-    padding: 1vh 3vw;
+.content {
+  background-color: rgb(238, 238, 238);
+  margin: 0;
 }
+
+.main-drug {
+  background-color: rgb(172, 189, 204);
+  border-radius: 1vw;
+  padding: 2vh 0vw;
+  margin-bottom: 2vh;
+}
+.drug_selection {
+  display: grid;
+  grid-template-areas: "1 1 1 1 1 1";
+  gap: 1vh 3vw;
+  padding: 1vh 3vw;
+}
+
+.input-group {
+  width: 100%;
+  margin: 1vw;
+}
+.input-group-text {
+  margin: 0;
+}
+.access_selection {
+  display: grid;
+  grid-template-areas: "1 1 1 1";
+  gap: 2vw;
+  padding: 1vh 3vw;
+}
+
+
 
 button {
-    height: 4vh;
+  height: 4vh;
+  border-radius: 6px;
 }
 
-.isActive{
-    background-color: rgb(125, 204, 125);
+.alert {
+  padding: 1vh;
+  margin: 2.5vh;
+}
+
+.btn-success {
+  background-color: rgb(98, 184, 158);
+}
+
+.submit {
+  padding: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.isActive {
+  background-color: rgb(90, 123, 192);
+  color: white;
+  border: none;
+}
+
+.inActive {
+  background-color: rgb(121, 119, 119);
+  color: white;
+  border: none;
 }
 
 .vials {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+
+.inputs {
+  display: flex;
+  gap: 3vw;
+  margin: 1vh;
+}
+
+.inputs input {
+  width: 43vw;
+
+}
+
+.selectedad {
+  height: 6vh;
+}
+
+.no-top-margin {
+  margin-top: 0;
+}
+
+/* table , th, td {
+    border: solid black 1px;
+} */
+
+
+
+.table1 {
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
+  text-align: center;
+  border-radius: 3px;
+  margin: 0vw 2.5vw;
+  color: black;
+  
+}
+
+.premed-table {
+  width: 93vw;
+}
+
+
+.diphenOut {
     display: flex;
-    flex-direction: row;
-    gap: 1vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0vw 3vw;
+}
+
+.premeds {
+    padding: 3vh 0vw;
 }
