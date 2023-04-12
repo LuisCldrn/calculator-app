@@ -27,10 +27,14 @@ export class DrugSelectionComponent implements OnInit {
   numberOfInf: number = 0;
   daySupply: number = 0;
   vialsToUse: number[] = [];
-  hydrationB: boolean = false;
-  conseqB: boolean = false;
-  concurrent: boolean = false;
+  hydrationB: string = 'false';
+  conseqB: string = 'false';
+  concurrent: string = 'false';
+  hydrationMls: number = 0;
   numberOfVials: number = 0;
+  premedCount: number = 0;
+  highestPremedMls: number = 0;
+  piccLumens: number = 0;
   //routes of admin to choose from
   routeOfAdmin: adminType[] = [
     new adminType('SQ', 'inActive'),
@@ -42,6 +46,11 @@ export class DrugSelectionComponent implements OnInit {
   vialDisplay: Vials[] = [];
   admin!: adminType;
   frequency: string = '';
+
+  //SET METHODS FOR IV PREMEDS
+
+  setPremedCount(num: number) {this.premedCount = num}
+  setHighestPremed(num: number) {this.highestPremedMls = num}
 
   saveInputs(daySupply: number, numberOfInf: number, frequency: string) {
     this.daySupply = daySupply;
@@ -204,6 +213,57 @@ export class DrugSelectionComponent implements OnInit {
   updateVialSig(sig: string) {
     this.vialDisplay.forEach((e) => (e.sig = sig));
   }
+
+  //HYDRATION CODE 
+
+  hydrationFreq: string = '';
+  hydrationSig: string = '';
+  hydrationQty: number = 0;
+  hydrationComment: string = '';
+
+  sethydraMls(num: number ) {
+    this.hydrationMls = num;
+  }
+  
+  setHydraFreq (str: string) {
+    this.hydrationFreq = str;
+    this.hydrationBuilder()
+  }
+
+  setHydration (str: string) {
+    this.hydrationB = str;
+  }
+
+  setConcurrent (str: string) {
+    this.concurrent = str;
+  }
+
+  hydrationBuilder() {
+    console.log(this.hydrationMls, this.hydrationQty, this.hydrationFreq, this.hydrationB, this.concurrent)
+    this.hydrationSig = `ADMINISTER ${this.hydrationMls}ML INTRAVENOUSLY ${this.hydrationFreq} EACH IG INFUSION (MAX INFUSION RATE XXXML PER HOUR).`
+    this.hydrationQty = this.hydrationFreq === 'PRIOR TO AND POST' ? +this.hydrationMls * this.numberOfInf * 2 : +this.hydrationMls * this.numberOfInf;
+    this.hydrationComment = this.calculateHydrationComment()
+  }
+
+  calculateHydrationComment() {
+    switch (true) {
+      case this.daySupply === 84 &&
+        (this.numberOfInf === 3 ||
+          this.numberOfInf === 12 ||
+          this.numberOfInf === 6):
+        return  `${this.hydrationQty}ML = ${this.daySupply}DS | ${
+          this.hydrationQty / 3
+        }ML = ${this.daySupply / 3}DS `;
+
+      case this.daySupply === 84 && this.numberOfInf === 4:
+        return `${this.hydrationQty}ML = ${this.daySupply}DS | ${
+          this.hydrationQty / 4
+        }ML = ${this.daySupply / 4}DS `;
+      default:
+        return `${this.hydrationQty}ML = ${this.daySupply}DS`;
+    }
+  }
+
 
   //DIPHENHYDRAMIN SPECIFIC CODE
 
@@ -420,9 +480,9 @@ export class DrugSelectionComponent implements OnInit {
       case (num === 10):
         if (this.doseMls<=1000 && this.doseMls>500) {return this.numberOfInf + 1} else return 0
       case (num === 11):
-        if (this.hydrationB===true) {return this.numberOfInf + 1} else return 1
+        if (this.hydrationB==="true") {return this.numberOfInf + 1} else return 1
       case (num === 12): 
-        if (this.conseqB === true) {return this.numberOfInf * 15} else return 0
+        if (this.conseqB === "true") {return this.numberOfInf * 15} else return 0
       case (num === 13):
         return this.numberOfInf * 25
       case (num === 14):
@@ -430,7 +490,7 @@ export class DrugSelectionComponent implements OnInit {
       case (num === 15):
         if(this.admin.admin === 'SQ'){return this.numberOfVials + 1} else return this.numberOfVials
       case (num === 16):
-        return this.concurrent ? this.numberOfInf + 1 : 0;
+        return this.concurrent === "true" ? this.numberOfInf + 1 : 0;
       case (num=== 17): 
         return 100;
       case (num===18):
@@ -439,7 +499,25 @@ export class DrugSelectionComponent implements OnInit {
         return ( this.admin.admin === 'SQ' ) ? Math.ceil(this.doseMls/50) * this.numberOfInf + 1 : this.numberOfInf + 1;  
       case (num===20):
         return (this.admin.admin === 'HYQVIA') ? (this.numberOfInf + 1) * 2 : this.numberOfInf + 1;
-     }
+      case (num===21):
+        return this.highestPremedMls <= 3 ? this.premedCount * this.numberOfInf +1 : 0;
+      case (num===22):
+        return this.highestPremedMls > 3 ? this.premedCount * this.numberOfInf +1 : 0;
+      case (num===23):
+        return this.premedCount * this.numberOfInf + 1;
+      case (num===24):
+        return this.numberOfInf * 15;
+      case (num===25):
+        return (50*this.numberOfInf * this.piccLumens) + (20 * (this.daySupply - this.numberOfInf) * this.piccLumens )
+      case (num===26):
+        return (12.5*this.numberOfInf * this.piccLumens) + (5 * (this.daySupply - this.numberOfInf) * this.piccLumens )
+      case (num===27):
+        return Math.round( this.unchangedDose * 0.5 ) < 10 ? this.numberOfInf + 1: 0;
+      case (num===28):
+        return Math.round( this.unchangedDose * 0.5 ) < 20 ? this.numberOfInf + 1: 0;
+      case (num===29):
+        return Math.round( this.unchangedDose * 0.5 ) < 30 ? this.numberOfInf + 1: 0;
+    }
   }
 
   displayedSupplies: Supply[] = [];

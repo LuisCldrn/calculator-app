@@ -1,224 +1,330 @@
 <div class="content">
-    <div class="main-drug">
-        <div class="access_selection">
-            <button class="{{ access.status }}" *ngFor="let access of routeOfAdmin" (click)="setAdmin(access)">
-                {{ access.admin }}
-            </button>
-        </div>
-        <div class="drug_selection">
-            <button *ngFor="let drug of drugListService.drugList" (click)="selectDrug(drug)" class="{{ drug.active }}">
-                {{ drug.name }}
-            </button>
-        </div>
-        <div class="inputs dose-inputs">
-            <div class="form-floating mb-3">
-                <input class="form-control" id="floatingInput" required type="text" #doseInput
-                    (keyup.enter)="calculateDose(doseInput.value)" placeholder="Enter dose in GM" />
-                <label for="floatingInput">Dose in GMs</label>
-            </div>
-            <div class="input-group mb-3 no-top-margin">
-                <select class="form-select selectedad" #freq (change)="print(freq.value)">
-                    <option selected value="">-- SELECT A FREQUENCY --</option>
-                    <option value="ONCE A WEEK">ONCE A WEEK</option>
-                    <option value="EVERY 2 WEEKS">EVERY 2 WEEKS</option>
-                    <option value="EVERY 3 WEEKS">EVERY 3 WEEKS</option>
-                    <option value="EVERY 4 WEEKS">EVERY 4 WEEKS</option>
-                    <option value="TWICE A WEEK">TWICE A WEEK</option>
-                </select>
-            </div>
-        </div>
-        <div class="inputs inf-input">
-            <div class="form-floating mb-3">
-                <input class="form-control" id="floatingInput" #infusion type="number" required
-                    placeholder="Enter Number of Infusions" />
-                <label for="floatingInput">Number of Infusions</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input class="form-control" id="floatingInput" #daySupply type="number" required
-                    placeholder="Enter Day Supply" />
-                <label for="floatingInput">Day Supply</label>
-            </div>
-        </div>
-        <div class="inf-input inputs">
-            <div class="form-floating mb-3">
-                <input type="number" id="floatingInput" class="form-control" />
-                <label for="floatingInput">Number of IV premeds per Infusion</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input id="floatingInput" type="number" class="form-control" />
-                <label for="floatingInput">Volume of Largest IV Premed (in MLs)</label>
-            </div>
-        </div>
-        <div class="PICC-input" *ngIf="this.admin?.admin === 'PICC'">
-            <div class="form-floating mb-3">
-                <input id="floatingInput" type="number" class="form-control" />
-                <label for="floatingInput">Number of Lumens (PICC only)</label>
-            </div>
-        </div>
-        <div class="submit">
-            <button class="btn btn-success" (click)="
+  <div class="main-drug">
+    <div class="access_selection">
+      <button
+        class="{{ access.status }}"
+        *ngFor="let access of routeOfAdmin"
+        (click)="setAdmin(access)"
+      >
+        {{ access.admin }}
+      </button>
+    </div>
+    <div class="drug_selection">
+      <button
+        *ngFor="let drug of drugListService.drugList"
+        (click)="selectDrug(drug)"
+        class="{{ drug.active }}"
+      >
+        {{ drug.name }}
+      </button>
+    </div>
+    <div class="inputs dose-inputs">
+      <div class="form-floating mb-3">
+        <input
+          class="form-control"
+          id="floatingInput"
+          required
+          type="text"
+          #doseInput
+          (keyup.enter)="calculateDose(doseInput.value)"
+          placeholder="Enter dose in GM"
+        />
+        <label for="floatingInput">Dose in GMs</label>
+      </div>
+      <div class="input-group mb-3 no-top-margin">
+        <select
+          class="form-select selectedad"
+          #freq
+          (change)="print(freq.value)"
+        >
+          <option selected value="">-- SELECT A FREQUENCY --</option>
+          <option value="ONCE A WEEK">ONCE A WEEK</option>
+          <option value="EVERY 2 WEEKS">EVERY 2 WEEKS</option>
+          <option value="EVERY 3 WEEKS">EVERY 3 WEEKS</option>
+          <option value="EVERY 4 WEEKS">EVERY 4 WEEKS</option>
+          <option value="TWICE A WEEK">TWICE A WEEK</option>
+        </select>
+      </div>
+    </div>
+    <div class="inputs inf-input">
+      <div class="form-floating mb-3">
+        <input
+          class="form-control"
+          id="floatingInput"
+          #infusion
+          type="number"
+          required
+          placeholder="Enter Number of Infusions"
+        />
+        <label for="floatingInput">Number of Infusions</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          class="form-control"
+          id="floatingInput"
+          #daySupply
+          type="number"
+          required
+          placeholder="Enter Day Supply"
+        />
+        <label for="floatingInput">Day Supply</label>
+      </div>
+    </div>
+    <div class="inf-input inputs">
+      <div class="form-floating mb-3">
+        <input
+          #preCount
+          (keyup)="setPremedCount(+preCount.value)"
+          type="number"
+          id="floatingInput"
+          class="form-control"
+        />
+        <label for="floatingInput">Number of IV premeds per Infusion</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          #highestMl
+          (keyup)="setHighestPremed(+highestMl.value)"
+          id="floatingInput"
+          type="number"
+          class="form-control"
+        />
+        <label for="floatingInput">Volume of Largest IV Premed (in MLs)</label>
+      </div>
+    </div>
+    <div class="PICC-input" *ngIf="this.admin?.admin === 'PICC'">
+      <div class="form-floating mb-3">
+        <input id="floatingInput" type="number" class="form-control" />
+        <label for="floatingInput">Number of Lumens (PICC only)</label>
+      </div>
+    </div>
+    <div class="submit">
+      <button
+        class="btn btn-success"
+        (click)="
           calculateVials(
             +infusion.value,
             +daySupply.value,
             freq.value,
             doseInput.value
           )
-        " type="submit">
-                CALCULATE
-            </button>
+        "
+        type="submit"
+      >
+        CALCULATE
+      </button>
+    </div>
+  </div>
+  <div *ngIf="errorMsg.length > 0" class="alert alert-warning" role="alert">
+    {{ errorMsg }}
+  </div>
+
+  <!-- TABLE FOR DRUGS ONCE GEENRATED -->
+
+  <table class="table table1 table-success table-bordered">
+    <thead>
+      <tr class="">
+        <th scope="col" width="10%">Vial Size</th>
+        <th scope="col" width="10%">Number of Vials per Infusion</th>
+        <th scope="col" width="10%">Dispense Quantity in mls</th>
+        <th scope="col" width="20%">Comment Line</th>
+        <th scope="col" width="30%">Directions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="" *ngFor="let vial of vialDisplay">
+        <td>{{ vial.size }}gm Vial</td>
+        <td>{{ vial.amount }}</td>
+        <td>{{ vial.dispenseMls }}</td>
+        <td>{{ vial.commentLine }}</td>
+        <td>{{ vial.sig }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- PREMED SECTION -->
+  <mat-tab-group class="premeds">
+    <mat-tab label="Hydration">
+      <div class="hydration-area">
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="Concurrent">Hydration:</label>
+          <select
+            #hydrateB
+            (change)="setHydration(hydrateB.value)"
+            class="form-select"
+            name="Concurrent"
+            id=""
+          >
+            <option value="true">YES</option>
+            <option selected value="false">NO</option>
+          </select>
         </div>
-    </div>
-    <div *ngIf="errorMsg.length > 0" class="alert alert-warning" role="alert">
-        {{ errorMsg }}
-    </div>
-
-    <!-- TABLE FOR DRUGS ONCE GEENRATED -->
-
-    <table class="table table1 table-success table-bordered">
-        <thead>
-            <tr class="">
-                <th scope="col" width="10%">Vial Size</th>
-                <th scope="col" width="10%">Number of Vials per Infusion</th>
-                <th scope="col" width="10%">Dispense Quantity in mls</th>
-                <th scope="col" width="20%">Comment Line</th>
-                <th scope="col" width="30%">Directions</th>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="Concurrent"
+            >Concurrent Hydration:</label
+          >
+          <select
+            #concurrentB
+            (change)="setConcurrent(concurrentB.value)"
+            class="form-select"
+            name="Concurrent"
+            id=""
+          >
+            <option value="true">YES</option>
+            <option selected value="false">NO</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label class="input-group-text" for="Amount">Amount:</label>
+          <input
+            #hydraMls
+            (keyup)="sethydraMls(+hydraMls.value)"
+            class="form-control"
+            type="number"
+            placeholder="50, 250, 500 OR 1000"
+          />
+        </div>
+        <div class="input-group">
+          <label class="input-group-text" for="hyFrequency">Frequency:</label>
+          <select
+            #hydrafreq
+            (change)="setHydraFreq(hydrafreq.value)"
+            class="form-select"
+            name="hyFrequency"
+            id=""
+          >
+            <option value="PRIOR TO">PRE</option>
+            <option value="POST TO">POST</option>
+            <option value="PRIOR TO AND POST">PRE & POST</option>
+            <option value="CONCURRENT TO">CONCURRENT</option>
+          </select>
+        </div>
+        <table class="table table-success premed-table">
+          <thead>
+            <tr>
+              <th width="10%" scope="col">Quantity</th>
+              <th width="50%" scope="col">Sig</th>
+              <th scope="col">Comment Line</th>
             </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>{{ hydrationQty }}</th>
+              <td>{{ hydrationSig }}</td>
+              <td>{{ hydrationComment }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-tab>
+    <mat-tab label="Diphenhydramine">
+      <div class="access_selection">
+        <label for="DIPHEN">SELECT DOSE:</label>
+        <button
+          class="{{ diphen.status }}"
+          (click)="setDiphenDoseSelected(diphen)"
+          *ngFor="let diphen of diphenDoses"
+        >
+          {{ diphen.dose }}
+        </button>
+      </div>
+
+      <div class="access_selection">
+        <label for="dipfreq">DOES IT REPEAT:</label>
+        <button
+          class="{{ diphenfrq.status }}"
+          (click)="setDiphenFreqSelected(diphenfrq)"
+          *ngFor="let diphenfrq of diphenFreq"
+        >
+          {{ diphenfrq.freq }}
+        </button>
+      </div>
+      <table class="table table-success premed-table">
+        <thead>
+          <tr>
+            <th width="10%" scope="col">Quantity</th>
+            <th width="50%" scope="col">Sig</th>
+            <th scope="col">Comment Line</th>
+          </tr>
         </thead>
         <tbody>
-            <tr class="" *ngFor="let vial of vialDisplay">
-                <td>{{ vial.size }}gm Vial</td>
-                <td>{{ vial.amount }}</td>
-                <td>{{ vial.dispenseMls }}</td>
-                <td>{{ vial.commentLine }}</td>
-                <td>{{ vial.sig }}</td>
-            </tr>
+          <tr>
+            <th>{{ diphenqty }}</th>
+            <td>{{ diphenSig }}</td>
+            <td>{{ diphenComment }}</td>
+          </tr>
         </tbody>
-    </table>
-    <!-- PREMED SECTION -->
-    <mat-tab-group class="premeds">
-        <mat-tab label="Hydration">
-            <div class="hydration-area">
-                <div class="input-group mb-3">
-                    <label class="input-group-text" for="Concurrent">Hydration:</label>
-                    <select #hydrateB class="form-select" name="Concurrent" id="">
-                        <option value="true">YES</option>
-                        <option selected value="false">NO</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3">
-                    <label #concurrentB class="input-group-text" for="Concurrent">Concurrent Hydration:</label>
-                    <select class="form-select" name="Concurrent" id="">
-                        <option value="YES">YES</option>
-                        <option selected value="NO">NO</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label class="input-group-text" for="Amount">Amount:</label>
-                    <input #hydraMls class="form-control" type="number" placeholder="50, 250, 500 OR 1000" />
-                </div>
-                <div class="input-group">
-                    <label class="input-group-text" for="hyFrequency">Frequency:</label>
-                    <select #hydrafreq class="form-select" name="hyFrequency" id="">
-                        <option value="PRE">PRE</option>
-                        <option value="POST">POST</option>
-                        <option value="PRE & POST">PRE & POST</option>
-                    </select>
-                </div>
-            </div>
-        </mat-tab>
-        <mat-tab label="Diphenhydramine">
-            <div class="access_selection">
-                <label for="DIPHEN">SELECT DOSE:</label>
-                <button class="{{ diphen.status }}" (click)="setDiphenDoseSelected(diphen)"
-                    *ngFor="let diphen of diphenDoses">
-                    {{ diphen.dose }}
-                </button>
-            </div>
+      </table>
+    </mat-tab>
+    <mat-tab label="Acetaminophen">
+      <div class="apapArea">
+        <div class="access_selection">
+          <label for="DIPHEN">SELECT DOSE:</label>
+          <button
+            class="{{ apap.status }}"
+            (click)="setApapDoseSelected(apap)"
+            *ngFor="let apap of apapDoses"
+          >
+            {{ apap.dose }}
+          </button>
+        </div>
 
-            <div class="access_selection">
-                <label for="dipfreq">DOES IT REPEAT:</label>
-                <button class="{{ diphenfrq.status }}" (click)="setDiphenFreqSelected(diphenfrq)"
-                    *ngFor="let diphenfrq of diphenFreq">
-                    {{ diphenfrq.freq }}
-                </button>
-            </div>
-            <table class="table table-success premed-table">
-                <thead>
-                    <tr>
-                        <th width="10%" scope="col">Quantity</th>
-                        <th width="50%" scope="col">Sig</th>
-                        <th scope="col">Comment Line</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>{{ diphenqty }}</th>
-                        <td>{{ diphenSig }}</td>
-                        <td>{{ diphenComment }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </mat-tab>
-        <mat-tab label="Acetaminophen">
-            <div class="apapArea">
-                <div class="access_selection">
-                    <label for="DIPHEN">SELECT DOSE:</label>
-                    <button class="{{ apap.status }}" (click)="setApapDoseSelected(apap)"
-                        *ngFor="let apap of apapDoses">
-                        {{ apap.dose }}
-                    </button>
-                </div>
-
-                <div class="access_selection">
-                    <label for="dipfreq">DOES IT REPEAT:</label>
-                    <button class="{{ apapfrq.status }}" (click)="setApapFreqSelected(apapfrq)"
-                        *ngFor="let apapfrq of apapFreq">
-                        {{ apapfrq.freq }}
-                    </button>
-                </div>
-                <table class="table table-success premed-table">
-                    <thead>
-                        <tr>
-                            <th width="10%" scope="col">Quantity</th>
-                            <th width="50%" scope="col">Sig</th>
-                            <th width="35%" scope="col">Comment Line</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>{{ apapqty }}</th>
-                            <td>{{ apapSig }}</td>
-                            <td>{{ apapCommentLine }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </mat-tab>
-    </mat-tab-group>
-    <div class="submit">
-        <button class="btn btn-success" (click)="calculateSupplies()" >CREATE SUPPLIES</button>
-    </div>
-    
-    <table class="table table-success">
-        <thead>
-            <th>IRC</th>
-            <th>NDC</th>
-            <th>NAME</th>
-            <th>PRESCRIBER</th>
-            <th>QUANTITY</th>
-            <th>SIG</th>
-            <th>NOTES</th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let supply of displayedSupplies" >
-                <td>{{supply.IRC}}</td>
-                <td>{{supply.NDC}}</td>
-                <td>{{supply.name}}</td>
-                <td>{{supply.prescriber}}</td>
-                <td>{{supply.qty}}</td>
-                <td>{{supply.sig}}</td>
-                <td>{{supply.notes}}</td>
+        <div class="access_selection">
+          <label for="dipfreq">DOES IT REPEAT:</label>
+          <button
+            class="{{ apapfrq.status }}"
+            (click)="setApapFreqSelected(apapfrq)"
+            *ngFor="let apapfrq of apapFreq"
+          >
+            {{ apapfrq.freq }}
+          </button>
+        </div>
+        <table class="table table-success premed-table">
+          <thead>
+            <tr>
+              <th width="10%" scope="col">Quantity</th>
+              <th width="50%" scope="col">Sig</th>
+              <th width="35%" scope="col">Comment Line</th>
             </tr>
-        </tbody>
-    </table>
+          </thead>
+          <tbody>
+            <tr>
+              <th>{{ apapqty }}</th>
+              <td>{{ apapSig }}</td>
+              <td>{{ apapCommentLine }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  <div class="submit">
+    <button class="btn btn-success" (click)="calculateSupplies()">
+      CREATE SUPPLIES
+    </button>
+  </div>
+
+  <table class="table table1 table-success">
+    <thead>
+      <tr>
+        <th>IRC</th>
+        <th>NDC</th>
+        <th>NAME</th>
+        <th>PRESCRIBER</th>
+        <th>QUANTITY</th>
+        <th>SIG</th>
+        <th>NOTES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let supply of displayedSupplies">
+        <td>{{ supply.IRC }}</td>
+        <td>{{ supply.NDC }}</td>
+        <td>{{ supply.name }}</td>
+        <td>{{ supply.prescriber }}</td>
+        <td>{{ supply.qty }}</td>
+        <td>{{ supply.sig }}</td>
+        <td>{{ supply.notes }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

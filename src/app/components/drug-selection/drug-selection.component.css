@@ -5,6 +5,8 @@
 .content {
   background-color: rgb(238, 238, 238);
   margin: 0;
+  padding-top: 3vh;
+  padding-bottom: 5vh;
 }
 
 .main-drug {
@@ -98,11 +100,17 @@ button:hover {
   margin-top: 0;
 }
 
+table, tr {
+  padding: 2vw;
+}
+
 /* table , th, td {
     border: solid black 1px;
 } */
 
-
+tr, table {
+  margin: 0;
+}
 
 .table1 {
   justify-content: center;
@@ -129,5 +137,5 @@ button:hover {
 }
 
 .premeds {
-    padding: 3vh 0vw;
+    padding: 10vh 0vw;
 }

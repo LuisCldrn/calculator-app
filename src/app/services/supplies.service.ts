@@ -55,7 +55,7 @@ export class SuppliesService {
   IvStartKit = new Supply(37247, '00000-0372-47', 'IV START KIT', ['PIV'], 'MD', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
   SterileDrapes = new Supply(38490, '00000-0384-90', 'STERILE DRAPES', ['PORT', 'PICC'], 'MD', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
   Underpads = new Supply(33860, '00000-0338-60', 'UNDERPADS', ['SQ', 'PIV'], 'CVS', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
-  Gauze = new Supply(39250, '00000-0392-50', 'GAUZE 2X2', ['SQ', 'PORT', 'PIV', 'PICC'], 'CVS', 0, 6, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  Gauze = new Supply(39250, '00000-0392-50', 'GAUZE 2X2', ['SQ', 'PORT', 'PIV', 'PICC'], 'CVS', 6, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
   Bandages = new Supply(40288, '00000-0402-88', 'BANDAGES, WATERPROOF', ['SQ','PIV', 'PORT', 'PICC'], 'CVS', 7, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
   Gloves = new Supply(45670, '00000-0437-17', 'GLOVES, MEDIUM (BOX)', ['SQ', 'PIV', 'PORT', 'PICC'], 'CVS', 17, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
   Wrap = new Supply(40238, '00000-0392-57', 'WRAP, 2" COBAN', ['PIV', 'PORT', 'PICC', 'SQ'], 'CVS', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
@@ -65,14 +65,33 @@ export class SuppliesService {
   Sharps3G = new Supply(35205, '63418-8001-03', 'SHARPS CONTAINER, 2 GALLON', ['PIV', 'PORT', 'PICC', 'SQ'], 'CVS', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
   Syring50 = new Supply(24288, '08290-3096-53', 'SYRINGE, 50-60ML', [ 'SQ', 'PIV', 'PORT', 'PICC'], 'MD', 19, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
   Needle18G = new Supply(52210, '00000-0522-10', 'NEEDLE 18GX1" HYPO', ['PIV', 'PORT', 'PICC'], 'MD', 20, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
-  Syringe10 = new Supply(43637, '08290-3029-95', 'SYRINGE, 10ML', ['PIV', 'PORT', 'PICC'], 'MD', 0, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
-  Syringe3 = new Supply(0, '', '', ['PIV', 'PORT', 'PICC'], '', 0, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  Syringe10 = new Supply(43637, '08290-3029-95', 'SYRINGE, 10ML', ['PIV', 'PORT', 'PICC'], 'MD', 22, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  Syringe3 = new Supply(34399, '08290-3096-57', 'SYRINGE, 3ML', ['PIV', 'PORT', 'PICC'], 'MD', 21, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  Needle25 = new Supply(12157, '08290-3051-25', 'NEEDLE, 25G X 1"', ['PIV', 'PORT', 'PICC'], 'MD', 23, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  LabInBox = new Supply(36217, '00000-0362-17', 'LAB IN A BOX', ['PIV', 'PORT', 'PICC'], 'MD', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  NsFlush = new Supply(32795, '64253-0111-35', 'PIV NS FLUSH 5ML', ['PIV'], 'MD', 13, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  HaparinPIV = new Supply(38526 , '64253-0222-35', 'PIV HEPARIN 10 U/ML 5ML', ['PIV'], 'MD', 12, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  PosiFlush = new Supply(35290, '08290-3065-53', 'STERILEFIELD PREFILLED SYRINGE POSIFLUSH', ['PORT'], 'MD', 14, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  HeparinPORT = new Supply(33503, '64253-0333-35', 'HEPARIN 100U/ML (5ML)', ['PORT'], 'MD', 24, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  NsFlushPICC = new Supply(33633, '64253-0111-30', 'NS FLUSH 10ML', ['PICC'], 'MD', 25, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  HeparinPICC = new Supply(33503, '64253-0333-35', 'HEPARIN 100U/ML (5ML)', ['PICC'], 'MD', 26, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  MiniSpikes = new Supply(32623, '00000-0326-23', 'MINISPIKES OR 18G NEEDLE (16611) FOR VIALS', ['SQ'], 'MD', 15, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  ConnectorFluid = new Supply(33520, '00000-0355-20', 'B BRAUN FLUID DISPENSING CONNECTOR', ['SQ'], 'MD', 19, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  HyqSyringe10 = new Supply(43637, '08290-3029-95', 'SYRINGE, 10ML', ['HYQVIA'], 'MD', 27, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  HyqSyringe20 = new Supply(38642, '08290-3028-30', 'SYRINGE, 20ML', ['HYQVIA'], 'MD', 28, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
+  HyqSyringe30 = new Supply(37100, '08290-3028-32', 'SYRINGE, 30ML', ['HYQVIA'], 'MD', 29, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
   // SUPPLY = new Supply(0, '', '', ['PIV', 'PORT', 'PICC'], '', 0, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL');
 
    constructor() {}
 
 
   suppliesList: Supply[] = [
+    this.NsFlush,
+    this.HaparinPIV,
+    this.PosiFlush,
+    this.HeparinPORT,
+    this.NsFlushPICC,
+    this.HeparinPICC,
     this.freedomPump,
     this.CurlinPump,
     this.PumpManual,
@@ -105,8 +124,18 @@ export class SuppliesService {
     this.PaperTape,
     this.AlcoholSwabs,
     this.Sharps2G,
-    this.Sharps3G
-
+    this.Sharps3G,
+    this.Syring50,
+    this.Needle18G,
+    this.Syringe10,
+    this.Syringe3,
+    this.Needle25,
+    this.LabInBox,
+    this.MiniSpikes,
+    this.ConnectorFluid,
+    this.HyqSyringe10,
+    this.HyqSyringe20,
+    this.HyqSyringe30,
   ]
 
 }
