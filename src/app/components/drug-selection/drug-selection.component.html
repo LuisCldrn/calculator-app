@@ -92,6 +92,15 @@
         <label for="floatingInput">Volume of Largest IV Premed (in MLs)</label>
       </div>
     </div>
+    <div class="conseq-input" *ngIf="this.admin?.admin !== 'SQ'">
+        <div class="form-floating mb-3">
+          <select #conseq (change)="setConseqB(conseq.value)" class="form-select" id="floatingInput">
+            <option value="true">YES</option>
+            <option selected value="false">NO</option>
+          </select>
+          <label for="floatingInput">Consecutive Multiday Infusion?</label>
+        </div>
+      </div>
     <div class="PICC-input" *ngIf="this.admin?.admin === 'PICC'">
       <div class="form-floating mb-3">
         <input id="floatingInput" type="number" class="form-control" />

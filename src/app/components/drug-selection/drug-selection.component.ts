@@ -51,7 +51,9 @@ export class DrugSelectionComponent implements OnInit {
 
   setPremedCount(num: number) {this.premedCount = num}
   setHighestPremed(num: number) {this.highestPremedMls = num}
+  setConseqB(str: string) {this.conseqB = str}
 
+  
   saveInputs(daySupply: number, numberOfInf: number, frequency: string) {
     this.daySupply = daySupply;
     this.numberOfInf = numberOfInf;
