@@ -8,9 +8,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MaterialExampleModule} from '../material.module';
+import { ClarificationsComponent } from './components/clarifications/clarifications.component';
 
 @NgModule({
-  declarations: [AppComponent, DrugSelectionComponent, NavigationComponent],
+  declarations: [AppComponent, DrugSelectionComponent, NavigationComponent, ClarificationsComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatSlideToggleModule, MaterialExampleModule ],
   providers: [],
   bootstrap: [AppComponent],

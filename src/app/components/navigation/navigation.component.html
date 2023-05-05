@@ -1,1 +1,26 @@
-<p>navigation works!</p>
+<header>
+    <nav class="navbar">
+      <div class="navbar_container">
+        <a class="navbar-brand"><img src="/assets/2.png" alt=""></a>
+        <div
+          class="navbar__toggle"
+          id="mobile-menu"
+          class="{{ mobileM }}"
+          (click)="mobile()"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav" class="navbar_menu" class="{{ mobileMenu }}">
+          <li class="nav-item" class="navbar__item" (click)="mobile()">
+            <a class="nav-link" >Home</a>
+          </li>
+          <button class="btn" id="resume_btn" >
+            <a href="assets\Luis Calderon Resume.pdf" download="Luis Calderon Resume.pdf" >Resume/CV</a>
+          </button>
+        </ul>
+        
+      </div>
+    </nav>
+  </header>
