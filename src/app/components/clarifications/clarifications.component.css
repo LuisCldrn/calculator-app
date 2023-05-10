@@ -1,0 +1,49 @@
+.clars {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas: "1 1 1 1 1";
+    gap: 1vh 4vw;
+}
+
+button {
+    width: 16vw;
+    height: 5vh;
+    border: none;
+    background-color: rgb(83, 145, 83);
+    color: white;
+    font-weight: 500;
+    border-radius: 1vw;
+
+}
+
+.active {
+    background-color: rgb(139, 37, 37);
+}
+
+h1{
+    padding: 3vh 3vw 0vh 3vw;
+    font-weight: 500;
+}
+
+.main {
+    background-color: rgb(238, 238, 238);
+    padding-bottom: 3vh;
+}
+
+.response {
+    display: flex;
+    flex-direction: row;
+    height: 25vh;
+    justify-content: center;
+    margin: 2vh 0 2vh 0;
+    gap: 2vw;
+}
+
+.short, .long {
+    width: 45vw;
+    padding: 3vw;
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: rgb(172, 189, 204);
+}
