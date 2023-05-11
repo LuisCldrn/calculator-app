@@ -59,3 +59,11 @@ h3 {
 .section {
     padding: 0 0vw;
 }
+
+.rx-clar {
+    grid-template-areas: "1 1 1 1 1 1";
+}
+
+.rx-clar button {
+    width: 12.5vw;
+}
