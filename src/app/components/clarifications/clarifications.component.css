@@ -1,16 +1,17 @@
 .clars {
     display: grid;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     grid-template-areas: "1 1 1 1 1";
-    gap: 1vh 4vw;
+    gap: 1vh 3vw;
+    padding: 0vw 3vw;
 }
 
 button {
     width: 16vw;
     height: 5vh;
     border: none;
-    background-color: rgb(83, 145, 83);
+    background-color: rgb(95, 134, 95);
     color: white;
     font-weight: 500;
     border-radius: 1vw;
@@ -24,6 +25,12 @@ button {
 h1{
     padding: 3vh 3vw 0vh 3vw;
     font-weight: 500;
+}
+
+h3 {
+    color: rgb(51, 89, 114);
+    font-weight: 500;
+    font-size: 1.2rem;
 }
 
 .main {
@@ -46,4 +53,9 @@ h1{
     font-weight: 600;
     font-size: 1rem;
     background-color: rgb(172, 189, 204);
+    border-radius: 1vw;
+}
+
+.section {
+    padding: 0 0vw;
 }
