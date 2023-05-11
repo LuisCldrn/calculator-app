@@ -49,6 +49,8 @@ export class ClarificationListService {
   Daw = new Clarification('DAW', 'Missing/Invalid DAW', 'inActive', 'RX', 'Nonrequired'); 
   Lumens = new Clarification('LUMENS', 'Missing/Invalid Lumens', 'inActive', 'RX', 'Nonrequired'); 
   Strength = new Clarification('STRENGTH', 'Missing/Invalid Strength on Main Drug', 'inActive', 'RX', 'Nonrequired'); 
+  PTIcd = new Clarification('PT-ICD10', 'Missing/Invalid ICD-10 Codes', 'inActive', 'PT', 'Nonrequired'); 
+  writtenDate = new Clarification('DATE', 'Missing/Invalid Written Date', 'inActive', 'RX', 'Nonrequired'); 
   
   // new Clarification('', '', 'inActive', 'RX', 'Nonrequired'); 
 
@@ -89,5 +91,7 @@ export class ClarificationListService {
     this.Daw,
     this.Lumens,
     this.Strength,
+    this.PTIcd,
+    this.writtenDate,
   ];
 }
