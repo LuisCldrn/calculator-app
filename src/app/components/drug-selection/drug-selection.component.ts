@@ -188,14 +188,13 @@ export class DrugSelectionComponent implements OnInit {
   mainDrugSigBuilder() {
     switch (true) {
       case this.selectedDrug === this.drugListService.Hyqvia: {
-        let sig = `Infuse every 3 weeks`;
+        let sig = `ADMINISTER HYALURONIDASE THEN SUBCUTANEOUSLY INFUSE HYQVIA ${this.unchangedDose}GM (${this.unchangedDose*10}ML) ${this.frequency}`;
         this.updateVialSig(sig);
         return;
       }
-      case this.selectedDrug ===
-        (this.drugListService.GammagardSD10 ||
-          this.drugListService.GammagardSD5): {
-        let sig = 'gammagard sig';
+      case (this.selectedDrug === this.drugListService.GammagardSD5 ||
+        this.selectedDrug ===this.drugListService.GammagardSD10): {
+        let sig = `RECONSTITUTE AS DIRECTED TO ${this.unchangedDose/this.doseMls * 100}%. INFUSE ${this.unchangedDose}GM (${this.doseMls}ML) INTRAVENOUSLY ${this.frequency}`;
         this.updateVialSig(sig);
         return;
       }
@@ -528,13 +527,21 @@ export class DrugSelectionComponent implements OnInit {
 
   calculateSupplies() {
     this.displayedSupplies = this.suppliesService.suppliesList.filter(e => e.admin.includes(this.admin.admin));
+    //calculate qty
     this.displayedSupplies.forEach(e => {
       e.qty = this.calculateSupplyQty(e.formula);
     }
     )
 
+    //premark supplies gray if qty is 0
+    this.displayedSupplies.forEach(e => {
+      if (e.qty===0) {e.status = 'complete'}
+    })
+
+    //filter to mdo and cvs supplies
     this.mdDisplayedSupplies = this.displayedSupplies.filter(e => e.prescriber === 'MD');
     this.cvsDisplayedSupplies = this.displayedSupplies.filter(e => e.prescriber === 'CVS');
+
   }
   //mark a supply complete by changing supply attribute to complete mark back to pending if clicked again
   markComplete(status:string, supply: Supply) {
