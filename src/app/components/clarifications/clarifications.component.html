@@ -1,18 +1,18 @@
 <div class="main">
     <div class="gen-clar section">
-        <h1>General Clarification</h1>
+        <h1>General Clarifications</h1>
         <div class="gen-clar clars">
             <button (click)="addClar(clar)" class="{{clar.status}}" *ngFor="let clar of genClar" >{{clar.code}}</button>
         </div>
     </div>
     <div class="patient-clar section">
-        <h1>Patient Clarification</h1>
+        <h1>Patient Clarifications</h1>
         <div class="pt-clar clars">
             <button (click)="addClar(clar)" class="{{clar.status}}" *ngFor="let clar of patientClar" >{{clar.code}}</button>
         </div>
     </div>
     <div class="md-clar section">
-        <h1>Md Clarification</h1>
+        <h1>MD Clarifications</h1>
         <div class="md-clar clars">
             <button (click)="addClar(clar)" class="{{clar.status}}" *ngFor="let clar of mdClar" >{{clar.code}}</button>
         </div>

@@ -44,7 +44,7 @@ export class ClarificationListService {
   preMedSig = new Clarification('PREMED-SIG', 'Need to clarify Directions on Pre-Medication _______', 'inActive', 'RX', 'Nonrequired');
   preMedDose = new Clarification('PREMED-DOSE', 'Need to clarify Dose on Pre-Medication _______', 'inActive', 'RX', 'Nonrequired');
   preMedRoa = new Clarification('PREMED-ROA', 'Need to clarify Rout of Admin on Pre-Medication _______', 'inActive', 'RX', 'Nonrequired');
-  SuppliesClause = new Clarification('SUPPLIES-Cluase', 'Need clause for authorization of ancillary supplies as needed for drug', 'inActive', 'GEN', 'Nonrequired'); 
+  SuppliesClause = new Clarification('SUPPLIES-Clause', 'Need clause for authorization of ancillary supplies as needed for drug', 'inActive', 'GEN', 'Nonrequired'); 
   FlushProt = new Clarification('FLUSH PROTOCOL', 'Missing/Invalid Flush Protocol on Rx', 'inActive', 'RX', 'Nonrequired'); 
   Daw = new Clarification('DAW', 'Missing/Invalid DAW', 'inActive', 'RX', 'Nonrequired'); 
   Lumens = new Clarification('LUMENS', 'Missing/Invalid Lumens', 'inActive', 'RX', 'Nonrequired'); 

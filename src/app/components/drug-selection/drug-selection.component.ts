@@ -523,13 +523,34 @@ export class DrugSelectionComponent implements OnInit {
   }
 
   displayedSupplies: Supply[] = [];
+  mdDisplayedSupplies: Supply[] = [];
+  cvsDisplayedSupplies: Supply[] = [];
 
   calculateSupplies() {
     this.displayedSupplies = this.suppliesService.suppliesList.filter(e => e.admin.includes(this.admin.admin));
     this.displayedSupplies.forEach(e => {
       e.qty = this.calculateSupplyQty(e.formula);
-    })
+    }
+    )
+
+    this.mdDisplayedSupplies = this.displayedSupplies.filter(e => e.prescriber === 'MD');
+    this.cvsDisplayedSupplies = this.displayedSupplies.filter(e => e.prescriber === 'CVS');
   }
+  //mark a supply complete by changing supply attribute to complete mark back to pending if clicked again
+  markComplete(status:string, supply: Supply) {
+    console.log(status)
+    if(supply.status === 'pending') {
+      supply.status = 'complete';
+    }
+
+    else {
+      supply.status = 'pending'
+    }
+
+  }
+
+
+
 
 }
 

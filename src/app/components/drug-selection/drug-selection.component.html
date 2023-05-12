@@ -226,10 +226,11 @@
       CREATE SUPPLIES
     </button>
   </div>
-
+  <h2>MD SUPPLIES  -<span>REQUIRES IMAGE ATTACHED</span></h2>
   <table class="table table1 table-success">
     <thead>
       <tr>
+        <th>COMPLETE</th>
         <th>IRC</th>
         <th>NDC</th>
         <th>NAME</th>
@@ -240,7 +241,36 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let supply of displayedSupplies">
+      <tr *ngFor="let supply of mdDisplayedSupplies" class="{{supply.status}}" >
+        <td><input #supStat (change)="markComplete(supStat.value, supply)" type="checkbox"></td>
+        <td>{{ supply.IRC }}</td>
+        <td>{{ supply.NDC }}</td>
+        <td>{{ supply.name }}</td>
+        <td>{{ supply.prescriber }}</td>
+        <td>{{ supply.qty }}</td>
+        <td>{{ supply.sig }}</td>
+        <td>{{ supply.notes }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>CVS SUPPLIES -<span>NO IMAGE ATTACHED REQUIRED</span></h2>
+  <table class="table table1 table-success">
+    <thead>
+      <tr>
+        <th>COMPLETE</th>
+        <th>IRC</th>
+        <th>NDC</th>
+        <th>NAME</th>
+        <th>PRESCRIBER</th>
+        <th>QUANTITY</th>
+        <th>SIG</th>
+        <th>NOTES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let supply of cvsDisplayedSupplies" class="{{supply.status}}" >
+        <td><input #supStat (change)="markComplete(supStat.value, supply)" type="checkbox"></td>
         <td>{{ supply.IRC }}</td>
         <td>{{ supply.NDC }}</td>
         <td>{{ supply.name }}</td>
