@@ -489,7 +489,7 @@ export class DrugSelectionComponent implements OnInit {
       case (num === 14):
         return this.numberOfInf * 50
       case (num === 15):
-        if(this.admin.admin === 'SQ'){return this.numberOfVials + 1} else return this.numberOfVials
+        if (this.selectedDrug === this.drugListService.HizentraPfs) {return 0} else if(this.admin.admin === 'SQ'){return this.numberOfVials + 1} else return this.numberOfVials
       case (num === 16):
         return this.concurrent === "true" ? this.numberOfInf + 1 : 0;
       case (num=== 17): 
@@ -501,11 +501,11 @@ export class DrugSelectionComponent implements OnInit {
       case (num===20):
         return (this.admin.admin === 'HYQVIA') ? (this.numberOfInf + 1) * 2 : this.numberOfInf + 1;
       case (num===21):
-        return this.highestPremedMls <= 3 ? this.premedCount * this.numberOfInf +1 : 0;
+        return this.highestPremedMls <= 3 && this.highestPremedMls > 0 ? this.premedCount * this.numberOfInf +1 : 0;
       case (num===22):
         return this.highestPremedMls > 3 ? this.premedCount * this.numberOfInf +1 : 0;
       case (num===23):
-        return this.premedCount * this.numberOfInf + 1;
+        return this.premedCount > 0 ? this.premedCount * this.numberOfInf + 1: 0;
       case (num===24):
         return this.numberOfInf * 15;
       case (num===25):
@@ -518,6 +518,10 @@ export class DrugSelectionComponent implements OnInit {
         return Math.round( this.unchangedDose * 0.5 ) < 20 ? this.numberOfInf + 1: 0;
       case (num===29):
         return Math.round( this.unchangedDose * 0.5 ) < 30 ? this.numberOfInf + 1: 0;
+      case (num===30):
+        return this.doseMls < 500 ? this.numberOfInf + 1: 0;
+      case (num === 31):
+        return this.selectedDrug === this.drugListService.HizentraPfs ? Math.ceil(this.doseMls/50) * this.numberOfInf + 1 : 0;
     }
   }
 
