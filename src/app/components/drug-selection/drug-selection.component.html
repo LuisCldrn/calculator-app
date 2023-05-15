@@ -131,6 +131,7 @@
         <div class="input-group">
           <label class="input-group-text" for="hyFrequency">Frequency:</label>
           <select #hydrafreq (change)="setHydraFreq(hydrafreq.value)" class="form-select" name="hyFrequency" id="">
+            <option value="">SELECT FREQUENCY</option>
             <option value="PRIOR TO">PRE</option>
             <option value="POST TO">POST</option>
             <option value="PRIOR TO AND POST">PRE & POST</option>
