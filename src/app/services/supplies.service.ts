@@ -51,7 +51,7 @@ export class SuppliesService {
   Bag250ml = new Supply(40355, '00000-0389-67', 'CORAM GRAVITY BAG (2 PORT, 250ML)', ['PIV', 'PORT', 'PICC'], 'MD', 8, 0, 'USE AS DIRECTED TO ADMINISTER IG', '# OF INFUSIONS + 1 EXTRA', 'ALL', "pending");
   IvTransferSet = new Supply(34524, '00000-0403-55', 'IV TRANSFER SET, 23" W/17G NEEDLE', ['PIV', 'PORT', 'PICC'], 'MD', 30, 0, 'USE AS DIRECTED TO ADMINISTER IG', '# OF INFUSIONS + 1 EXTRA', 'ALL', "pending");
   VentedSpike = new Supply(37079, '00000-0370-79', 'VENTED SPIKE ADAPTER', ['PIV', 'PORT', 'PICC'], 'MD', 15, 0, 'USE AS DIRECTED TO ADMINISTER IG', 'NO REFILLS - ONLY GIVE IN PLACE OF GRAVITY BAG', 'ALL', "pending");
-  DressingKit = new Supply(48513, '00000-0417-92', 'PICC/PORT DRESSING CHANGE KIT', ['PORT', 'PICC'], 'MD', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '# OF INFUSIONS + 1 EXTRA', 'ALL', "pending");
+  DressingKit = new Supply(48513, '00000-0417-92', 'PICC/PORT DRESSING CHANGE KIT', ['PORT', 'PICC', ], 'MD', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '# OF INFUSIONS + 1 EXTRA', 'ALL', "pending");
   IvStartKit = new Supply(37247, '00000-0372-47', 'IV START KIT', ['PIV'], 'MD', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '# OF INFUSIONS + 1 EXTRA', 'ALL', "pending");
   SterileDrapes = new Supply(38490, '00000-0384-90', 'STERILE DRAPES', ['PORT', 'PICC'], 'MD', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '# OF INFUSIONS + 1 EXTRA', 'ALL', "pending");
   Underpads = new Supply(33860, '00000-0338-60', 'UNDERPADS', ['SQ', 'PIV'], 'CVS', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '# OF INFUSIONS + 1 EXTRA', 'ALL', "pending");
@@ -115,6 +115,7 @@ export class SuppliesService {
     this.IvTransferSet,
     this.DressingKit,
     this.IvStartKit,
+    this.VentedSpike,
     this.SterileDrapes,
     this.Underpads,
     this.Gauze,
