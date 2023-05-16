@@ -129,6 +129,17 @@ body {
   font-weight: 900;
 }
 
+button a {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  display: flex;
+  position: fixed;
+  right: 5vw;
+}
+
 @media only screen and (max-width: 960px) {
   .navbar_container {
     display: flex;
