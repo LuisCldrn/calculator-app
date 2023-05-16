@@ -53,12 +53,12 @@ export class SuppliesService {
   VentedSpike = new Supply(37079, '00000-0370-79', 'VENTED SPIKE ADAPTER', ['PIV', 'PORT', 'PICC'], 'MD', 15, 0, 'USE AS DIRECTED TO ADMINISTER IG', 'NO REFILLS - ONLY GIVE IN PLACE OF GRAVITY BAG', 'ALL', "pending");
   DressingKit = new Supply(48513, '00000-0417-92', 'PICC/PORT DRESSING CHANGE KIT', ['PORT', 'PICC', ], 'MD', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '# OF INFUSIONS + 1 EXTRA', 'ALL', "pending");
   IvStartKit = new Supply(37247, '00000-0372-47', 'IV START KIT', ['PIV'], 'MD', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '# OF INFUSIONS + 1 EXTRA', 'ALL', "pending");
-  SterileDrapes = new Supply(38490, '00000-0384-90', 'STERILE DRAPES', ['PORT', 'PICC'], 'MD', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '# OF INFUSIONS + 1 EXTRA', 'ALL', "pending");
+  SterileDrapes = new Supply(38490, '00000-0384-90', 'STERILE DRAPES', ['PORT', 'PICC'], 'CVS', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '# OF INFUSIONS + 1 EXTRA', 'ALL', "pending");
   Underpads = new Supply(33860, '00000-0338-60', 'UNDERPADS', ['SQ', 'PIV'], 'CVS', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '# OF INFUSIONS + 1 EXTRA', 'ALL', "pending");
   Gauze = new Supply(39250, '00000-0392-50', 'GAUZE 2X2', ['SQ', 'PORT', 'PIV', 'PICC'], 'CVS', 6, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending");
   Bandages = new Supply(40288, '00000-0402-88', 'BANDAGES, WATERPROOF', ['SQ','PIV', 'PORT', 'PICC'], 'CVS', 7, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending");
   Gloves = new Supply(45670, '00000-0437-17', 'GLOVES, MEDIUM (BOX)', ['SQ', 'PIV', 'PORT', 'PICC'], 'CVS', 17, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending");
-  Wrap = new Supply(40238, '00000-0392-57', 'WRAP, 2" COBAN', ['PIV', 'PORT', 'PICC', 'SQ'], 'CVS', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending");
+  Wrap = new Supply(40238, '00000-0392-57', 'WRAP, 2" COBAN', ['PIV',], 'CVS', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending");
   PaperTape = new Supply(23511, '08333-1530-01', 'TAPE, PAPER 1" MICROPORE', ['PIV', 'PORT', 'PICC', 'SQ'], 'CVS', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending");
   AlcoholSwabs = new Supply(34094, '00000-0340-94', 'ALCOHOL PADS', ['SQ','PIV', 'PORT', 'PICC'], 'CVS', 18, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending");
   Sharps2G = new Supply(39170, '00000-0391-70', 'SHARPS CONTAINER, 2 GALLON', ['PIV', 'PORT', 'PICC', 'SQ'], 'CVS', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending");
