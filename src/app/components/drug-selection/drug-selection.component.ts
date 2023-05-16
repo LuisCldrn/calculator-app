@@ -68,6 +68,10 @@ export class DrugSelectionComponent implements OnInit {
     this.admin.status = 'isActive';
     
   }
+
+  setVials(num: number) {
+    this.numberOfVials = num;
+  }
   //select a drug to make it active and remove others active class
   selectDrug(drug: Drug) {
     if (this.selectedDrug !== undefined) {
@@ -111,7 +115,8 @@ export class DrugSelectionComponent implements OnInit {
         } while (this.dose - this.selectedDrug.vialSizes[i] >= 0 === true);
       }
     }
-    this.numberOfVials = this.vialsToUse.length
+    this.numberOfVials === 0 && (this.numberOfVials = this.vialsToUse.length);
+
     if (this.dose > 0) {
       this.errorMsg =
         'Please Double check dose and vial sizes. As does cannot be made with vials';

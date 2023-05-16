@@ -51,6 +51,13 @@
         <label for="floatingInput">Volume of Largest IV Premed (in MLs)</label>
       </div>
     </div>
+    <div class="conseq-input">
+      <div class="form-floating mb-3">
+        <input #vials (keyup)="setVials(+vials.value)" id="floatingInput" type="number"
+          class="form-control" />
+        <label for="floatingInput">Number of Vials per Infusion (Leave blank for Auto Calcualtion)</label>
+      </div>
+    </div>
     <div class="conseq-input" *ngIf="this.admin?.admin !== 'SQ'">
       <div class="form-floating mb-3">
         <select #conseq (change)="setConseqB(conseq.value)" class="form-select" id="floatingInput">
