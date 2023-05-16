@@ -12,6 +12,7 @@ export class Supply {
         public notes: string,
         public type: string,
         public status: string,
+        public required: string,
     ) {
         
     }

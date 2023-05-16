@@ -153,3 +153,12 @@ h2 {
 h2 span {
   color: red;
 }
+
+.require {
+  color: rgb(194, 0, 0);
+  font-weight: 400;
+}
+
+.notes {
+  color: rgb(128, 44, 44);
+}

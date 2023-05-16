@@ -550,15 +550,15 @@ export class DrugSelectionComponent implements OnInit {
           5 * (this.daySupply - this.numberOfInf) * this.piccLumens
         );
       case num === 27:
-        return Math.round(this.unchangedDose * 0.5) < 10
+        return (Math.round(this.unchangedDose * 0.5) < 10 && Math.round(this.unchangedDose * 0.5) > 0)
           ? this.numberOfInf + 1
           : 0;
       case num === 28:
-        return Math.round(this.unchangedDose * 0.5) < 20
+        return (Math.round(this.unchangedDose * 0.5) < 20 && Math.round(this.unchangedDose * 0.5) >= 10)
           ? this.numberOfInf + 1
           : 0;
       case num === 29:
-        return Math.round(this.unchangedDose * 0.5) < 30
+        return (Math.round(this.unchangedDose * 0.5) < 30 && Math.round(this.unchangedDose * 0.5) >= 20)
           ? this.numberOfInf + 1
           : 0;
       case num === 30:
@@ -575,6 +575,7 @@ export class DrugSelectionComponent implements OnInit {
   cvsDisplayedSupplies: Supply[] = [];
 
   calculateSupplies() {
+    this.selectedDrug === this.drugListService.Hyqvia && (this.admin.admin = 'HYQVIA'); 
     this.displayedSupplies = this.suppliesService.suppliesList.filter(e => e.admin.includes(this.admin.admin));
     //calculate qty
     this.displayedSupplies.forEach(e => {

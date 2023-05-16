@@ -40,12 +40,12 @@
       </div>
     </div>
     <div class="inf-input inputs">
-      <div class="form-floating mb-3">
+      <div class="form-floating mb-3" *ngIf="this.admin?.admin !== 'SQ'" >
         <input #preCount (keyup)="setPremedCount(+preCount.value)" type="number" id="floatingInput"
           class="form-control" />
         <label for="floatingInput">Number of IV premeds per Infusion</label>
       </div>
-      <div class="form-floating mb-3">
+      <div class="form-floating mb-3" *ngIf="this.admin?.admin !== 'SQ'" >
         <input #highestMl (keyup)="setHighestPremed(+highestMl.value)" id="floatingInput" type="number"
           class="form-control" />
         <label for="floatingInput">Volume of Largest IV Premed (in MLs)</label>
@@ -249,7 +249,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let supply of mdDisplayedSupplies" class="{{supply.status}}" >
+      <tr *ngFor="let supply of mdDisplayedSupplies" class="{{supply.status}} {{supply.required}}" >
         <td><input #supStat (change)="markComplete(supStat.value, supply)" type="checkbox"></td>
         <td>{{ supply.IRC }}</td>
         <td>{{ supply.NDC }}</td>
@@ -257,7 +257,7 @@
         <td>{{ supply.prescriber }}</td>
         <td>{{ supply.qty }}</td>
         <td>{{ supply.sig }}</td>
-        <td>{{ supply.notes }}</td>
+        <td class="notes" >{{ supply.notes }}</td>
       </tr>
     </tbody>
   </table>
@@ -277,7 +277,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let supply of cvsDisplayedSupplies" class="{{supply.status}}" >
+      <tr *ngFor="let supply of cvsDisplayedSupplies" class="{{supply.status}} {{supply.required}}" >
         <td><input #supStat (change)="markComplete(supStat.value, supply)" type="checkbox"></td>
         <td>{{ supply.IRC }}</td>
         <td>{{ supply.NDC }}</td>
@@ -285,7 +285,7 @@
         <td>{{ supply.prescriber }}</td>
         <td>{{ supply.qty }}</td>
         <td>{{ supply.sig }}</td>
-        <td>{{ supply.notes }}</td>
+        <td class="notes" >{{ supply.notes }}</td>
       </tr>
     </tbody>
   </table>
