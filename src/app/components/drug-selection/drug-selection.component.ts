@@ -459,69 +459,109 @@ export class DrugSelectionComponent implements OnInit {
   //SUPPLIES CALCULATIONS
 
   calculateSupplyQty(num: number): any {
-    switch(true) {
-      case (num===1): 
-        {return 1}
-      case (num===2):
-        {return 3}
-      case (num===3):
-        {return this.numberOfInf + 1 }
-      case (num === 4):
-        {return this.numberOfInf * 3 + 1}
-      case (num === 5):
+    switch (true) {
+      case num === 1: {
+        return 1;
+      }
+      case num === 2: {
+        return 3;
+      }
+      case num === 3: {
+        return this.numberOfInf + 1;
+      }
+      case num === 4: {
+        return this.numberOfInf * 3 + 1;
+      }
+      case num === 5:
         return this.numberOfInf * 3;
-      case (num === 6):
+      case num === 6:
         return 25;
-      case (num === 7):
+      case num === 7:
         return 20;
-      case (num === 8):
-        return this.doseMls<=250? this.numberOfInf + 1:  0;
-      case (num === 9):
-        if (this.doseMls<=500 && this.doseMls>250) {return this.numberOfInf + 1} else return 0
-      case (num === 10):
-        if (this.doseMls<=1000 && this.doseMls>500) {return this.numberOfInf + 1} else return 0
-      case (num === 11):
-        if (this.hydrationB==="true") {return this.numberOfInf + 1} else return 1
-      case (num === 12): 
-        if (this.conseqB === "true") {return this.numberOfInf * 15} else return 0
-      case (num === 13):
-        return this.numberOfInf * 25
-      case (num === 14):
-        return this.numberOfInf * 50
-      case (num === 15):
-        if (this.selectedDrug === this.drugListService.HizentraPfs) {return 0} else if(this.admin.admin === 'SQ'){return this.numberOfVials + 1} else return this.numberOfVials
-      case (num === 16):
-        return this.concurrent === "true" ? this.numberOfInf + 1 : 0;
-      case (num=== 17): 
+      case num === 8:
+        return this.doseMls <= 250 ? this.numberOfInf + 1 : 0;
+      case num === 9:
+        if (this.doseMls <= 500 && this.doseMls > 250) {
+          return this.numberOfInf + 1;
+        } else return 0;
+      case num === 10:
+        if (this.doseMls <= 1000 && this.doseMls > 500) {
+          return this.numberOfInf + 1;
+        } else return 0;
+      case num === 11:
+        if (this.hydrationB === 'true') {
+          return this.numberOfInf + 1;
+        } else return 1;
+      case num === 12:
+        if (this.conseqB === 'true') {
+          return this.numberOfInf * 15;
+        } else return 0;
+      case num === 13:
+        return this.numberOfInf * 25;
+      case num === 14:
+        return this.numberOfInf * 50;
+      case num === 15:
+        if (this.selectedDrug === this.drugListService.HizentraPfs) {
+          return 0;
+        } else if (this.admin.admin === 'SQ') {
+          return this.numberOfVials * this.numberOfInf + 1;
+        } else return this.numberOfVials * this.numberOfInf;
+      case num === 16:
+        return this.concurrent === 'true' ? this.numberOfInf + 1 : 0;
+      case num === 17:
         return 100;
-      case (num===18):
+      case num === 18:
         return 200;
-      case (num===19):
-        return ( this.admin.admin === 'SQ' ) ? Math.ceil(this.doseMls/50) * this.numberOfInf + 1 : this.numberOfInf + 1;  
-      case (num===20):
-        return (this.admin.admin === 'HYQVIA') ? (this.numberOfInf + 1) * 2 : this.numberOfInf + 1;
-      case (num===21):
-        return this.highestPremedMls <= 3 && this.highestPremedMls > 0 ? this.premedCount * this.numberOfInf +1 : 0;
-      case (num===22):
-        return this.highestPremedMls > 3 ? this.premedCount * this.numberOfInf +1 : 0;
-      case (num===23):
-        return this.premedCount > 0 ? this.premedCount * this.numberOfInf + 1: 0;
-      case (num===24):
+      case num === 19:
+        return this.admin.admin === 'SQ'
+          ? Math.ceil(this.doseMls / 50) * this.numberOfInf + 1
+          : this.numberOfInf + 1;
+      case num === 20:
+        return this.admin.admin === 'HYQVIA'
+          ? (this.numberOfInf + 1) * 2
+          : this.numberOfInf + 1;
+      case num === 21:
+        return this.highestPremedMls <= 3 && this.highestPremedMls > 0
+          ? this.premedCount * this.numberOfInf + 1
+          : 0;
+      case num === 22:
+        return this.highestPremedMls > 3
+          ? this.premedCount * this.numberOfInf + 1
+          : 0;
+      case num === 23:
+        return this.premedCount > 0
+          ? this.premedCount * this.numberOfInf + 1
+          : 0;
+      case num === 24:
         return this.numberOfInf * 15;
-      case (num===25):
-        return (50*this.numberOfInf * this.piccLumens) + (20 * (this.daySupply - this.numberOfInf) * this.piccLumens )
-      case (num===26):
-        return (12.5*this.numberOfInf * this.piccLumens) + (5 * (this.daySupply - this.numberOfInf) * this.piccLumens )
-      case (num===27):
-        return Math.round( this.unchangedDose * 0.5 ) < 10 ? this.numberOfInf + 1: 0;
-      case (num===28):
-        return Math.round( this.unchangedDose * 0.5 ) < 20 ? this.numberOfInf + 1: 0;
-      case (num===29):
-        return Math.round( this.unchangedDose * 0.5 ) < 30 ? this.numberOfInf + 1: 0;
-      case (num===30):
-        return this.doseMls < 500 ? this.numberOfInf + 1: 0;
-      case (num === 31):
-        return this.selectedDrug === this.drugListService.HizentraPfs ? Math.ceil(this.doseMls/50) * this.numberOfInf + 1 : 0;
+      case num === 25:
+        return (
+          50 * this.numberOfInf * this.piccLumens +
+          20 * (this.daySupply - this.numberOfInf) * this.piccLumens
+        );
+      case num === 26:
+        return (
+          12.5 * this.numberOfInf * this.piccLumens +
+          5 * (this.daySupply - this.numberOfInf) * this.piccLumens
+        );
+      case num === 27:
+        return Math.round(this.unchangedDose * 0.5) < 10
+          ? this.numberOfInf + 1
+          : 0;
+      case num === 28:
+        return Math.round(this.unchangedDose * 0.5) < 20
+          ? this.numberOfInf + 1
+          : 0;
+      case num === 29:
+        return Math.round(this.unchangedDose * 0.5) < 30
+          ? this.numberOfInf + 1
+          : 0;
+      case num === 30:
+        return this.doseMls < 500 ? this.numberOfInf + 1 : 0;
+      case num === 31:
+        return this.selectedDrug === this.drugListService.HizentraPfs
+          ? Math.ceil(this.doseMls / 50) * this.numberOfInf + 1
+          : 0;
     }
   }
 
