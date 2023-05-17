@@ -39,7 +39,7 @@ export class SuppliesService {
   IVHolster = new Supply(36332, '00000-0363-32', 'PUMP HOLSTER', ['PICC', 'PORT', 'PIV', 'HYQVIA'], 'MD', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', 'NPE ONLY', 'NPE', "pending", 'nrequire');
   PivCath24 = new Supply(31237, '08290-3814-12', 'PIV Catheter, 24G x 3/4"', ['PIV'], 'MD', 5, 0, 'USE AS DIRECTED TO ADMINISTER IG', 'SEND BOTH 22G AND 24G, THEN ONLY ONE OR THE OTHER PER PATIENT/NURSE PREFERENCE', 'ALL', "pending", 'require');
   PivCath24win = new Supply(40204, '00000-0402-04', 'PIV Catheter, 24G x 3/4" winged', [ 'PIV'], 'MD', 5, 0, 'USE AS DIRECTED TO ADMINISTER IG', 'SEND BOTH 22G AND 24G, THEN ONLY ONE OR THE OTHER PER PATIENT/NURSE PREFERENCE', 'ALL', "pending", 'require');
-  PivCath22 = new Supply(39333, '00000-0393-33', 'PIV Catheter, 24G x 3/4" winged', ['PIV'], 'MD', 5, 0, 'USE AS DIRECTED TO ADMINISTER IG', 'SEND BOTH 22G AND 24G, THEN ONLY ONE OR THE OTHER PER PATIENT/NURSE PREFERENCE', 'ALL', "pending", 'require');
+  PivCath22 = new Supply(39333, '00000-0393-33', 'PIV Catheter, 22G x 1" Introcan - Braun', ['PIV'], 'MD', 5, 0, 'USE AS DIRECTED TO ADMINISTER IG', 'SEND BOTH 22G AND 24G, THEN ONLY ONE OR THE OTHER PER PATIENT/NURSE PREFERENCE', 'ALL', "pending", 'require');
   Huber22G = new Supply(39819, '00000-0398-19', 'PORT Huber set, 22G x 3/4"', ['PORT'], 'MD', 5, 0, 'USE AS DIRECTED TO ADMINISTER IG', 'SEND BOTH 3/4" HUBER AND 1" HUBER FOR NPE THEN ONLY ONE OR THE OTHER PER PATIENT/NURSE PREFERENCE', 'ALL', "pending", 'require');
   Huber22G1 = new Supply(35386, '00000-0353-86', 'PORT Huber set, 22G x 1"', ['PORT'], 'MD', 5, 0, 'USE AS DIRECTED TO ADMINISTER IG', 'SEND BOTH 3/4" HUBER AND 1" HUBER FOR NPE THEN ONLY ONE OR THE OTHER PER PATIENT/NURSE PREFERENCE', 'ALL', "pending", 'require');
   ClaveConnector = new Supply(28870, '00000-0288-70', 'Clave connector (needleless)', ['PORT'], 'MD', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending", 'require');
@@ -62,7 +62,7 @@ export class SuppliesService {
   PaperTape = new Supply(23511, '08333-1530-01', 'TAPE, PAPER 1" MICROPORE', ['PIV', 'PORT', 'PICC', 'SQ', 'HYQVIA'], 'CVS', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending", 'nrequire');
   AlcoholSwabs = new Supply(34094, '00000-0340-94', 'ALCOHOL PADS', ['SQ','PIV', 'PORT', 'PICC', 'HYQVIA'], 'CVS', 18, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending", 'nrequire');
   Sharps2G = new Supply(39170, '00000-0391-70', 'SHARPS CONTAINER, 2 GALLON', ['PIV', 'PORT', 'PICC', 'SQ', 'HYQVIA'], 'CVS', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending", 'nrequire');
-  Sharps3G = new Supply(35205, '63418-8001-03', 'SHARPS CONTAINER, 2 GALLON', ['PIV', 'PORT', 'PICC', 'SQ', 'HYQVIA'], 'CVS', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending", 'nrequire');
+  Sharps3G = new Supply(35205, '63418-8001-03', 'SHARPS CONTAINER, 3 GALLON', ['PIV', 'PORT', 'PICC', 'SQ', 'HYQVIA'], 'CVS', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending", 'nrequire');
   Syring50 = new Supply(24288, '08290-3096-53', 'SYRINGE, 50-60ML', [ 'SQ', 'PIV', 'PORT', 'PICC', 'HYQVIA'], 'MD', 19, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending", 'nrequire');
   Needle18G = new Supply(52210, '00000-0522-10', 'NEEDLE 18GX1" HYPO', ['PIV', 'PORT', 'PICC', 'HYQVIA'], 'MD', 20, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending", 'nrequire');
   Syringe10 = new Supply(43637, '08290-3029-95', 'SYRINGE, 10ML', ['PIV', 'PORT', 'PICC'], 'MD', 22, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending", 'nrequire');
