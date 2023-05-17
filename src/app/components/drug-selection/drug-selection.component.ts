@@ -480,9 +480,9 @@ export class DrugSelectionComponent implements OnInit {
       case num === 5:
         return this.numberOfInf * 3;
       case num === 6:
-        return 25;
+        return this.numberOfInf > 1 ? Math.ceil(this.daySupply / 28) * 25 :  25;
       case num === 7:
-        return 20;
+        return this.numberOfInf > 1 ? Math.ceil(this.daySupply / 28) * 20 :  20;
       case num === 8:
         return this.doseMls <= 250 ? this.numberOfInf + 1 : 0;
       case num === 9:
