@@ -6,31 +6,8 @@ import { Supply } from '../common/supply';
 })
 export class SuppliesService {
 
-  freedomPump = new Supply(
-    34308,
-    '00000-0343-08',
-    'FREEDOM 60 PUMP',
-    ['SQ'],
-    'MD',
-    1,
-    0,
-    'USE AS DIRECTED TO ADMINISTER IG',
-    'NPE & PUMP MAINTNANCE ONLY',
-    'NPE', "pending", 'nrequire'
-  );
-  CurlinPump = new Supply(
-    36299,
-    '00000-0362-99',
-    'CURLIN PUMP',
-    ['PICC', 'PORT', 'PIV', 'HYQVIA'],
-    'MD',
-    1,
-    0,
-    'USE AS DIRECTED TO ADMINISTER IG',
-    'NPE & PUMP MAINTNANCE ONLY',
-    'NPE', "pending", 'nrequire'
-  );
-
+  freedomPump = new Supply(34308, '00000-0343-08', 'FREEDOM 60 PUMP', ['SQ'], 'MD', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', 'NPE & PUMP MAINTNANCE ONLY','NPE', "pending", 'nrequire');
+  CurlinPump = new Supply(36299,'00000-0362-99', 'CURLIN PUMP', ['PICC', 'PORT', 'PIV', 'HYQVIA'], 'MD', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', 'NPE & PUMP MAINTNANCE ONLY', 'NPE', "pending", 'nrequire');
   PumpManual = new Supply(40427, '00000-0404-27', 'PUMP MANUAL', ['PICC', 'SQ', 'PORT', 'PIV', 'HYQVIA'], 'CVS', 1, 0, 'USE AS DIRECTED TO ADMINISTER IG', 'NPE & PUMP MAINTENANCE', 'NPE', "pending", 'nrequire');
   Battery = new Supply(47729, '', 'BATTERY C', ['PICC', 'PORT', 'PIV', 'HYQVIA'], 'CVS', 2, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending", 'nrequire');
   Curlin90 = new Supply(37140, '00000-0371-40', 'CURLING SET 90"', ['PICC', 'PORT', 'PIV', 'HYQVIA'], 'MD', 3, 0, 'USE AS DIRECTED TO ADMINISTER IG', '', 'ALL', "pending", 'require');
