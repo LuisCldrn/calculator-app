@@ -3,6 +3,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { Drug } from 'src/app/common/drug';
 import { Supply } from 'src/app/common/supply';
 import { Vials } from 'src/app/common/vials';
+import { ClarificationListService } from 'src/app/services/clarification-list.service';
 import { DrugListService } from 'src/app/services/drug-list.service';
 import { SuppliesService } from 'src/app/services/supplies.service';
 
@@ -18,6 +19,7 @@ export class DrugSelectionComponent implements OnInit {
     public drugListService: DrugListService,
     public matTabGroup: MatTabsModule,
     public suppliesService: SuppliesService,
+    public clarificationService: ClarificationListService,
   ) {}
   errorMsg: string = '';
   selectedDrug!: Drug;
@@ -85,6 +87,12 @@ export class DrugSelectionComponent implements OnInit {
     this.dose = +num;
     this.unchangedDose = +num;
     this.doseMls = this.selectedDrug.strength * +num;
+  }
+
+  printArray() {
+    let exportData = this.clarificationService.clarificationList;
+
+    console.log(JSON.stringify(exportData, null, 2));
   }
 
   calculateVials(
@@ -160,8 +168,8 @@ export class DrugSelectionComponent implements OnInit {
   calcVialsFields() {
     this.vialDisplay.forEach((e) => {
       if (
-        this.selectedDrug === this.drugListService.GammagardSD10 ||
-        this.selectedDrug === this.drugListService.GammagardSD5
+        this.selectedDrug.name === 'Gammagard S/D 5%' ||
+        this.selectedDrug.name === 'Gammagard S/D 10%'
       ) {
         e.dispenseMls = e.amount * this.numberOfInf;
       } else {
@@ -192,13 +200,13 @@ export class DrugSelectionComponent implements OnInit {
 
   mainDrugSigBuilder() {
     switch (true) {
-      case this.selectedDrug === this.drugListService.Hyqvia: {
+      case this.selectedDrug.name === 'Hyqvia': {
         let sig = `ADMINISTER HYALURONIDASE THEN SUBCUTANEOUSLY INFUSE HYQVIA ${this.unchangedDose}GM (${this.unchangedDose*10}ML) ${this.frequency}`;
         this.updateVialSig(sig);
         return;
       }
-      case (this.selectedDrug === this.drugListService.GammagardSD5 ||
-        this.selectedDrug ===this.drugListService.GammagardSD10): {
+      case (this.selectedDrug.name === 'Gammagard S/D 5%' ||
+        this.selectedDrug.name === 'Gammagard S/D 10%'): {
         let sig = `RECONSTITUTE AS DIRECTED TO ${this.unchangedDose/this.doseMls * 100}%. INFUSE ${this.unchangedDose}GM (${this.doseMls}ML) INTRAVENOUSLY ${this.frequency}`;
         this.updateVialSig(sig);
         return;
@@ -282,7 +290,7 @@ export class DrugSelectionComponent implements OnInit {
   diphenDoses: Doses[] = [
     new Doses('25MG', 1, '1 CAPSULE', 'inActive'),
     new Doses('50MG', 2, '2 CAPSULES', 'inActive'),
-    new Doses('25-50MG', 2, '1-2 CAPULE(S)', 'inActive'),
+    new Doses('25-50MG', 2, '1-2 CAPSULE(S)', 'inActive'),
   ];
 
   diphenFreq: preFreq[] = [
@@ -506,7 +514,7 @@ export class DrugSelectionComponent implements OnInit {
       case num === 14:
         return this.numberOfInf * 50;
       case num === 15:
-        if (this.selectedDrug === this.drugListService.HizentraPfs) {
+        if (this.selectedDrug.name === "Hizentra PFS") {
           return 0;
         } else if (this.admin.admin === 'SQ') {
           return this.numberOfVials * this.numberOfInf + 1;
@@ -564,7 +572,7 @@ export class DrugSelectionComponent implements OnInit {
       case num === 30:
         return this.doseMls < 500 ? this.numberOfInf + 1 : 0;
       case num === 31:
-        return this.selectedDrug === this.drugListService.HizentraPfs
+        return this.selectedDrug.name === 'Hizentra PFS'
           ? Math.ceil(this.doseMls / 50) * this.numberOfInf + 1
           : 0;
     }
@@ -575,7 +583,7 @@ export class DrugSelectionComponent implements OnInit {
   cvsDisplayedSupplies: Supply[] = [];
 
   calculateSupplies() {
-    this.selectedDrug === this.drugListService.Hyqvia && (this.admin.admin = 'HYQVIA'); 
+    this.selectedDrug.name === 'Hyqvia' && (this.admin.admin = 'HYQVIA'); 
     this.displayedSupplies = this.suppliesService.suppliesList.filter(e => e.admin.includes(this.admin.admin));
     //calculate qty
     this.displayedSupplies.forEach(e => {

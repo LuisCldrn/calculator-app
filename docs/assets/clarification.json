@@ -1,0 +1,268 @@
+[
+    {
+      "code": "PT-NAME",
+      "desc": "Missing/Invalid Patient Name",
+      "status": "inActive",
+      "clarifType": "PT",
+      "required": "required"
+    },
+    {
+      "code": "PT-DOB",
+      "desc": "Missing/Invalid Patient DOB",
+      "status": "inActive",
+      "clarifType": "PT",
+      "required": "required"
+    },
+    {
+      "code": "PT-ADD",
+      "desc": "Missing/Invalid Patinet Address",
+      "status": "inActive",
+      "clarifType": "PT",
+      "required": "required"
+    },
+    {
+      "code": "PT-PH",
+      "desc": "Missing/Invalid Patient Phone",
+      "status": "inActive",
+      "clarifType": "PT",
+      "required": "nonrequired"
+    },
+    {
+      "code": "HBS#",
+      "desc": "HBS account Incorrect",
+      "status": "inActive",
+      "clarifType": "PT",
+      "required": "nonrequired"
+    },
+    {
+      "code": "PT-HT",
+      "desc": "Missing/Invalid Patient Height",
+      "status": "inActive",
+      "clarifType": "PT",
+      "required": "nonrequired"
+    },
+    {
+      "code": "PT-WT",
+      "desc": "Missing/Invalid Patient Weight",
+      "status": "inActive",
+      "clarifType": "PT",
+      "required": "nonrequired"
+    },
+    {
+      "code": "PT-Identifier",
+      "desc": "Patient Information (Name, DOB, address etc) does not match what we have on file",
+      "status": "inActive",
+      "clarifType": "PT",
+      "required": "required"
+    },
+    {
+      "code": "IG-Erx",
+      "desc": "ERX not accepted for IVIG please provide complete nursing orders",
+      "status": "inActive",
+      "clarifType": "GEN",
+      "required": "nonrequired"
+    },
+    {
+      "code": "LOA/LOS",
+      "desc": "Location of Service",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "required"
+    },
+    {
+      "code": "EPI",
+      "desc": "Missing/Invalid EpiPen Information",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "required"
+    },
+    {
+      "code": "NEW REFERRAL",
+      "desc": "FOR NPE - NEED TO CREATE A CVS PRE-POPULATED FORM FOR VALID PRESCRIPTION AUTHORIZATION TO BE SENT TO MDO FOR APPROVAL",
+      "status": "inActive",
+      "clarifType": "GEN",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "NY",
+      "desc": "NEW YORK PRESCRIBER/NEED A VERBAL PER NY MDO PROTOCOL RX",
+      "status": "inActive",
+      "clarifType": "GEN",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "DISPENSE QTY/DS",
+      "desc": "Missing/Invalid RX Dispense Quantity/Day Supply",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "required"
+    },
+    {
+      "code": "VIAL SIZE",
+      "desc": "Vial sizes and dose do not match",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "DOSE",
+      "desc": "Missing/Invalid Dose",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "required"
+    },
+    {
+      "code": "REFILLS",
+      "desc": "Missing/Invalid Refills",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "required"
+    },
+    {
+      "code": "DRUG",
+      "desc": "Missing/Invalid main drug",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "required"
+    },
+    {
+      "code": "ROA",
+      "desc": "Missing/Invalid Route of Administration",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "required"
+    },
+    {
+      "code": "Signature",
+      "desc": "Missing/Invalid Signature",
+      "status": "inActive",
+      "clarifType": "MD",
+      "required": "required"
+    },
+    {
+      "code": "PFLW",
+      "desc": "Patient Liability Waiver - self infusion waiver",
+      "status": "inActive",
+      "clarifType": "PT",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "MD",
+      "desc": "Missing/Invalid MD Name",
+      "status": "inActive",
+      "clarifType": "MD",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "NPI",
+      "desc": "Missing/Invalid MD NPI",
+      "status": "inActive",
+      "clarifType": "MD",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "MD Phone/Fax/Add",
+      "desc": "Missing/invalid MD phone, fax or address",
+      "status": "inActive",
+      "clarifType": "MD",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "RPH-Review",
+      "desc": "Rx needs Clinical review from RPH before Entering",
+      "status": "inActive",
+      "clarifType": "GEN",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "ALT MED",
+      "desc": "Alternative Medication Needed",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "FREQ",
+      "desc": "Missing/Invalid Frequency",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "CHANGE IN ORDERS-RPH",
+      "desc": "Need RPh Review for Change in orders for __________",
+      "status": "inActive",
+      "clarifType": "GEN",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "PREMED-DOSE",
+      "desc": "Need to clarify Dose on Pre-Medication _______",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "PREMED-ROA",
+      "desc": "Need to clarify Rout of Admin on Pre-Medication _______",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "PREMED-SIG",
+      "desc": "Need to clarify Directions on Pre-Medication _______",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "SUPPLIES-Clause",
+      "desc": "Need clause for authorization of ancillary supplies as needed for drug",
+      "status": "inActive",
+      "clarifType": "GEN",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "FLUSH PROTOCOL",
+      "desc": "Missing/Invalid Flush Protocol on Rx",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "DAW",
+      "desc": "Missing/Invalid DAW",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "LUMENS",
+      "desc": "Missing/Invalid Lumens",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "STRENGTH",
+      "desc": "Missing/Invalid Strength on Main Drug",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "PT-ICD10",
+      "desc": "Missing/Invalid ICD-10 Codes",
+      "status": "inActive",
+      "clarifType": "PT",
+      "required": "Nonrequired"
+    },
+    {
+      "code": "DATE",
+      "desc": "Missing/Invalid Written Date",
+      "status": "inActive",
+      "clarifType": "RX",
+      "required": "Nonrequired"
+    }
+  ]

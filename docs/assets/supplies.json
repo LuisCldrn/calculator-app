@@ -1,0 +1,906 @@
+[
+    {
+      "IRC": 32795,
+      "NDC": "64253-0111-35",
+      "name": "PIV NS FLUSH 5ML",
+      "admin": [
+        "PIV"
+      ],
+      "prescriber": "MD",
+      "formula": 13,
+      "qty": 0,
+      "sig": "USE AS NEEDED WITH INFUSION TO MAINTAIN IV ACCESS AND PATENCY",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 38526,
+      "NDC": "64253-0222-35",
+      "name": "PIV HEPARIN 10 U/ML 5ML",
+      "admin": [
+        "PIV"
+      ],
+      "prescriber": "MD",
+      "formula": 12,
+      "qty": 0,
+      "sig": "USE AS NEEDED WITH INFUSION TO MAINTAIN IV ACCESS AND PATENCY",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 35290,
+      "NDC": "08290-3065-53",
+      "name": "STERILEFIELD PREFILLED SYRINGE POSIFLUSH",
+      "admin": [
+        "PORT"
+      ],
+      "prescriber": "MD",
+      "formula": 14,
+      "qty": 0,
+      "sig": "USE AS NEEDED WITH INFUSION TO MAINTAIN IV ACCESS AND PATENCY",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 33503,
+      "NDC": "64253-0333-35",
+      "name": "HEPARIN 100U/ML (5ML)",
+      "admin": [
+        "PORT"
+      ],
+      "prescriber": "MD",
+      "formula": 24,
+      "qty": 0,
+      "sig": "USE AS NEEDED WITH INFUSION TO MAINTAIN IV ACCESS AND PATENCY",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 33633,
+      "NDC": "64253-0111-30",
+      "name": "NS FLUSH 10ML",
+      "admin": [
+        "PICC"
+      ],
+      "prescriber": "MD",
+      "formula": 25,
+      "qty": 0,
+      "sig": "USE AS NEEDED WITH INFUSION TO MAINTAIN IV ACCESS AND PATENCY",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 33503,
+      "NDC": "64253-0333-35",
+      "name": "HEPARIN 100U/ML (5ML)",
+      "admin": [
+        "PICC"
+      ],
+      "prescriber": "MD",
+      "formula": 26,
+      "qty": 0,
+      "sig": "USE AS NEEDED WITH INFUSION TO MAINTAIN IV ACCESS AND PATENCY",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 34308,
+      "NDC": "00000-0343-08",
+      "name": "FREEDOM 60 PUMP",
+      "admin": [
+        "SQ"
+      ],
+      "prescriber": "MD",
+      "formula": 1,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "NPE & PUMP MAINTNANCE ONLY",
+      "type": "NPE",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 36299,
+      "NDC": "00000-0362-99",
+      "name": "CURLIN PUMP",
+      "admin": [
+        "PICC",
+        "PORT",
+        "PIV",
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 1,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "NPE & PUMP MAINTNANCE ONLY",
+      "type": "NPE",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 40427,
+      "NDC": "00000-0404-27",
+      "name": "PUMP MANUAL",
+      "admin": [
+        "PICC",
+        "SQ",
+        "PORT",
+        "PIV",
+        "HYQVIA"
+      ],
+      "prescriber": "CVS",
+      "formula": 1,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "NPE & PUMP MAINTENANCE",
+      "type": "NPE",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 47729,
+      "NDC": "",
+      "name": "BATTERY C",
+      "admin": [
+        "PICC",
+        "PORT",
+        "PIV",
+        "HYQVIA"
+      ],
+      "prescriber": "CVS",
+      "formula": 2,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 37140,
+      "NDC": "00000-0371-40",
+      "name": "CURLING SET 90\"",
+      "admin": [
+        "PICC",
+        "PORT",
+        "PIV",
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 3,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 36293,
+      "NDC": "00000-0411-57",
+      "name": "IV POLE",
+      "admin": [
+        "PICC",
+        "PORT",
+        "PIV",
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 1,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "NPE ONLY",
+      "type": "NPE",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 36331,
+      "NDC": "00000-0363-31",
+      "name": "IV POLE CLAMP",
+      "admin": [
+        "PICC",
+        "PORT",
+        "PIV",
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 1,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "NPE ONLY",
+      "type": "NPE",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 36332,
+      "NDC": "00000-0363-32",
+      "name": "PUMP HOLSTER",
+      "admin": [
+        "PICC",
+        "PORT",
+        "PIV",
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 1,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "NPE ONLY",
+      "type": "NPE",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 31237,
+      "NDC": "08290-3814-12",
+      "name": "PIV Catheter, 24G x 3/4\"",
+      "admin": [
+        "PIV"
+      ],
+      "prescriber": "MD",
+      "formula": 5,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "SEND BOTH 22G AND 24G, THEN ONLY ONE OR THE OTHER PER PATIENT/NURSE PREFERENCE",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 40204,
+      "NDC": "00000-0402-04",
+      "name": "PIV Catheter, 24G x 3/4\" winged",
+      "admin": [
+        "PIV"
+      ],
+      "prescriber": "MD",
+      "formula": 5,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "SEND BOTH 22G AND 24G, THEN ONLY ONE OR THE OTHER PER PATIENT/NURSE PREFERENCE",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 39333,
+      "NDC": "00000-0393-33",
+      "name": "PIV Catheter, 22G x 1\" Introcan - Braun",
+      "admin": [
+        "PIV"
+      ],
+      "prescriber": "MD",
+      "formula": 5,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "SEND BOTH 22G AND 24G, THEN ONLY ONE OR THE OTHER PER PATIENT/NURSE PREFERENCE",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 39819,
+      "NDC": "00000-0398-19",
+      "name": "PORT Huber set, 22G x 3/4\"",
+      "admin": [
+        "PORT"
+      ],
+      "prescriber": "MD",
+      "formula": 5,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "SEND BOTH 3/4\" HUBER AND 1\" HUBER FOR NPE THEN ONLY ONE OR THE OTHER PER PATIENT/NURSE PREFERENCE",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 35386,
+      "NDC": "00000-0353-86",
+      "name": "PORT Huber set, 22G x 1\"",
+      "admin": [
+        "PORT"
+      ],
+      "prescriber": "MD",
+      "formula": 5,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "SEND BOTH 3/4\" HUBER AND 1\" HUBER FOR NPE THEN ONLY ONE OR THE OTHER PER PATIENT/NURSE PREFERENCE",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 28870,
+      "NDC": "00000-0288-70",
+      "name": "Clave connector (needleless)",
+      "admin": [
+        "PORT"
+      ],
+      "prescriber": "MD",
+      "formula": 3,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 43187,
+      "NDC": "00000-0431-87",
+      "name": "Clave ext set 7\"",
+      "admin": [
+        "PIV"
+      ],
+      "prescriber": "MD",
+      "formula": 3,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "# OF INFUSIONS + 1 EXTRA",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 32666,
+      "NDC": "00000-0326-66",
+      "name": "IV Set sol w/ dou-vent",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC"
+      ],
+      "prescriber": "MD",
+      "formula": 11,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "IF GRAVITY/HYDRATION, THEN GIVE 1 PER INFUSION + 1 EXTRA (AND INCLUDE REFILLS)",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 35289,
+      "NDC": "85412-0024-27",
+      "name": "IV Set extension (Dial-a-Flo extension)",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC"
+      ],
+      "prescriber": "MD",
+      "formula": 11,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "IF GRAVITY/HYDRATION, THEN GIVE 1 PER INFUSION + 1 EXTRA (AND INCLUDE REFILLS)",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 38967,
+      "NDC": "00000-0389-67",
+      "name": "CORAM GRAVITY BAG (3 LEGGED BAG), 1000ML",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC",
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 10,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "# OF INFUSIONS + 1 EXTRA",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 40355,
+      "NDC": "00000-0389-67",
+      "name": "CORAM GRAVITY BAG (2 PORT, 250ML)",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC",
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 8,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "# OF INFUSIONS + 1 EXTRA",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 39779,
+      "NDC": "00000-0397-79",
+      "name": "CORAM GRAVITY BAG (2 PORT, 500ML)",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC",
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 9,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "# OF INFUSIONS + 1 EXTRA",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 34524,
+      "NDC": "00000-0403-55",
+      "name": "IV TRANSFER SET, 23\" W/17G NEEDLE",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC",
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 30,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "# OF INFUSIONS + 1 EXTRA",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 48513,
+      "NDC": "00000-0417-92",
+      "name": "PICC/PORT DRESSING CHANGE KIT",
+      "admin": [
+        "PORT",
+        "PICC"
+      ],
+      "prescriber": "MD",
+      "formula": 3,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "# OF INFUSIONS + 1 EXTRA",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 37247,
+      "NDC": "00000-0372-47",
+      "name": "IV START KIT",
+      "admin": [
+        "PIV"
+      ],
+      "prescriber": "MD",
+      "formula": 3,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "# OF INFUSIONS + 1 EXTRA",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 37079,
+      "NDC": "00000-0370-79",
+      "name": "VENTED SPIKE ADAPTER",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC",
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 15,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "NO REFILLS - ONLY GIVE IN PLACE OF GRAVITY BAG",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 38490,
+      "NDC": "00000-0384-90",
+      "name": "STERILE DRAPES",
+      "admin": [
+        "PORT",
+        "PICC"
+      ],
+      "prescriber": "CVS",
+      "formula": 3,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "# OF INFUSIONS + 1 EXTRA",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 33860,
+      "NDC": "00000-0338-60",
+      "name": "UNDERPADS",
+      "admin": [
+        "SQ",
+        "PIV",
+        "HYQVIA"
+      ],
+      "prescriber": "CVS",
+      "formula": 3,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "# OF INFUSIONS + 1 EXTRA",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 39250,
+      "NDC": "00000-0392-50",
+      "name": "GAUZE 2X2",
+      "admin": [
+        "SQ",
+        "PORT",
+        "PIV",
+        "PICC",
+        "HYQVIA"
+      ],
+      "prescriber": "CVS",
+      "formula": 6,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 40288,
+      "NDC": "00000-0402-88",
+      "name": "BANDAGES, WATERPROOF",
+      "admin": [
+        "SQ",
+        "PIV",
+        "PORT",
+        "PICC",
+        "HYQVIA"
+      ],
+      "prescriber": "CVS",
+      "formula": 7,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 45670,
+      "NDC": "00000-0437-17",
+      "name": "GLOVES, MEDIUM (BOX)",
+      "admin": [
+        "SQ",
+        "PIV",
+        "PORT",
+        "PICC",
+        "HYQVIA"
+      ],
+      "prescriber": "CVS",
+      "formula": 17,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 40238,
+      "NDC": "00000-0392-57",
+      "name": "WRAP, 2\" COBAN",
+      "admin": [
+        "PIV"
+      ],
+      "prescriber": "CVS",
+      "formula": 1,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 23511,
+      "NDC": "08333-1530-01",
+      "name": "TAPE, PAPER 1\" MICROPORE",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC",
+        "SQ",
+        "HYQVIA"
+      ],
+      "prescriber": "CVS",
+      "formula": 1,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 34094,
+      "NDC": "00000-0340-94",
+      "name": "ALCOHOL PADS",
+      "admin": [
+        "SQ",
+        "PIV",
+        "PORT",
+        "PICC",
+        "HYQVIA"
+      ],
+      "prescriber": "CVS",
+      "formula": 18,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 39170,
+      "NDC": "00000-0391-70",
+      "name": "SHARPS CONTAINER, 2 GALLON",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC",
+        "SQ",
+        "HYQVIA"
+      ],
+      "prescriber": "CVS",
+      "formula": 1,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 35205,
+      "NDC": "63418-8001-03",
+      "name": "SHARPS CONTAINER, 3 GALLON",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC",
+        "SQ",
+        "HYQVIA"
+      ],
+      "prescriber": "CVS",
+      "formula": 1,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 24288,
+      "NDC": "08290-3096-53",
+      "name": "SYRINGE, 50-60ML",
+      "admin": [
+        "SQ",
+        "PIV",
+        "PORT",
+        "PICC",
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 19,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 52210,
+      "NDC": "00000-0522-10",
+      "name": "NEEDLE 18GX1\" HYPO",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC",
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 20,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 43637,
+      "NDC": "08290-3029-95",
+      "name": "SYRINGE, 10ML",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC"
+      ],
+      "prescriber": "MD",
+      "formula": 22,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 34399,
+      "NDC": "08290-3096-57",
+      "name": "SYRINGE, 3ML",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC"
+      ],
+      "prescriber": "MD",
+      "formula": 21,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 12157,
+      "NDC": "08290-3051-25",
+      "name": "NEEDLE, 25G X 1\"",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC"
+      ],
+      "prescriber": "MD",
+      "formula": 23,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 36217,
+      "NDC": "00000-0362-17",
+      "name": "LAB IN A BOX",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC"
+      ],
+      "prescriber": "MD",
+      "formula": 1,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
+    },
+    {
+      "IRC": 32623,
+      "NDC": "00000-0326-23",
+      "name": "MINISPIKES OR 18G NEEDLE (16611) FOR VIALS",
+      "admin": [
+        "SQ"
+      ],
+      "prescriber": "MD",
+      "formula": 15,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 33520,
+      "NDC": "00000-0355-20",
+      "name": "B BRAUN FLUID DISPENSING CONNECTOR",
+      "admin": [
+        "SQ"
+      ],
+      "prescriber": "MD",
+      "formula": 31,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 43637,
+      "NDC": "08290-3029-95",
+      "name": "SYRINGE, 10ML",
+      "admin": [
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 27,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 36842,
+      "NDC": "08290-3028-30",
+      "name": "SYRINGE, 20ML",
+      "admin": [
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 28,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    },
+    {
+      "IRC": 37100,
+      "NDC": "08290-3028-32",
+      "name": "SYRINGE, 30ML",
+      "admin": [
+        "HYQVIA"
+      ],
+      "prescriber": "MD",
+      "formula": 29,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "require"
+    }
+  ]
