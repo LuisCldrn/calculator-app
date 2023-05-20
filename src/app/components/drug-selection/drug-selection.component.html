@@ -1,42 +1,23 @@
 <div class="content">
   <div class="main-drug">
     <div class="access_selection">
-      <button
-        class="{{ access.status }}"
-        *ngFor="let access of routeOfAdmin"
-        (click)="setAdmin(access)"
-      >
+      <button class="{{ access.status }}" *ngFor="let access of routeOfAdmin" (click)="setAdmin(access)">
         {{ access.admin }}
       </button>
     </div>
     <div class="drug_selection">
-      <button
-        *ngFor="let drug of drugListService.drugList"
-        (click)="selectDrug(drug)"
-        class="{{ drug.active }}"
-      >
+      <button *ngFor="let drug of drugListService.drugList" (click)="selectDrug(drug)" class="{{ drug.active }}">
         {{ drug.name }}
       </button>
     </div>
     <div class="inputs dose-inputs">
       <div class="form-floating mb-3">
-        <input
-          class="form-control"
-          id="floatingInput"
-          required
-          type="text"
-          #doseInput
-          (keyup.enter)="calculateDose(doseInput.value)"
-          placeholder="Enter dose in GM"
-        />
+        <input class="form-control" id="floatingInput" required type="text" #doseInput
+          (keyup.enter)="calculateDose(doseInput.value)" placeholder="Enter dose in GM" />
         <label for="floatingInput">Dose in GMs</label>
       </div>
       <div class="input-group mb-3 no-top-margin">
-        <select
-          class="form-select selectedad"
-          #freq
-          (change)="print(freq.value)"
-        >
+        <select class="form-select selectedad" #freq (change)="print(freq.value)">
           <option selected value="">-- SELECT A FREQUENCY --</option>
           <option value="ONCE A WEEK">ONCE A WEEK</option>
           <option value="EVERY 2 WEEKS">EVERY 2 WEEKS</option>
@@ -48,59 +29,44 @@
     </div>
     <div class="inputs inf-input">
       <div class="form-floating mb-3">
-        <input
-          class="form-control"
-          id="floatingInput"
-          #infusion
-          type="number"
-          required
-          placeholder="Enter Number of Infusions"
-        />
+        <input class="form-control" id="floatingInput" #infusion type="number" required
+          placeholder="Enter Number of Infusions" />
         <label for="floatingInput">Number of Infusions</label>
       </div>
       <div class="form-floating mb-3">
-        <input
-          class="form-control"
-          id="floatingInput"
-          #daySupply
-          type="number"
-          required
-          placeholder="Enter Day Supply"
-        />
+        <input class="form-control" id="floatingInput" #daySupply type="number" required
+          placeholder="Enter Day Supply" />
         <label for="floatingInput">Day Supply</label>
       </div>
     </div>
     <div class="inf-input inputs">
-      <div class="form-floating mb-3">
-        <input
-          #preCount
-          (keyup)="setPremedCount(+preCount.value)"
-          type="number"
-          id="floatingInput"
-          class="form-control"
-        />
+      <div class="form-floating mb-3" *ngIf="this.admin?.admin !== 'SQ'" >
+        <input #preCount (keyup)="setPremedCount(+preCount.value)" type="number" id="floatingInput"
+          class="form-control" />
         <label for="floatingInput">Number of IV premeds per Infusion</label>
       </div>
-      <div class="form-floating mb-3">
-        <input
-          #highestMl
-          (keyup)="setHighestPremed(+highestMl.value)"
-          id="floatingInput"
-          type="number"
-          class="form-control"
-        />
+      <div class="form-floating mb-3" *ngIf="this.admin?.admin !== 'SQ'" >
+        <input #highestMl (keyup)="setHighestPremed(+highestMl.value)" id="floatingInput" type="number"
+          class="form-control" />
         <label for="floatingInput">Volume of Largest IV Premed (in MLs)</label>
       </div>
     </div>
-    <div class="conseq-input" *ngIf="this.admin?.admin !== 'SQ'">
-        <div class="form-floating mb-3">
-          <select #conseq (change)="setConseqB(conseq.value)" class="form-select" id="floatingInput">
-            <option value="true">YES</option>
-            <option selected value="false">NO</option>
-          </select>
-          <label for="floatingInput">Consecutive Multiday Infusion?</label>
-        </div>
+    <div class="conseq-input">
+      <div class="form-floating mb-3">
+        <input #vials (keyup)="setVials(+vials.value)" id="floatingInput" type="number"
+          class="form-control" />
+        <label for="floatingInput">Number of Vials per Infusion (Leave blank for Auto Calcualtion)</label>
       </div>
+    </div>
+    <div class="conseq-input" *ngIf="this.admin?.admin !== 'SQ'">
+      <div class="form-floating mb-3">
+        <select #conseq (change)="setConseqB(conseq.value)" class="form-select" id="floatingInput">
+          <option value="true">YES</option>
+          <option selected value="false">NO</option>
+        </select>
+        <label for="floatingInput">Consecutive Multiday Infusion?</label>
+      </div>
+    </div>
     <div class="PICC-input" *ngIf="this.admin?.admin === 'PICC'">
       <div class="form-floating mb-3">
         <input id="floatingInput" type="number" class="form-control" />
@@ -108,20 +74,17 @@
       </div>
     </div>
     <div class="submit">
-      <button
-        class="btn btn-success"
-        (click)="
+      <button class="btn btn-success" (click)="
           calculateVials(
             +infusion.value,
             +daySupply.value,
             freq.value,
             doseInput.value
           )
-        "
-        type="submit"
-      >
+        " type="submit">
         CALCULATE
       </button>
+      <button (click)="printArray()" > print</button>
     </div>
   </div>
   <div *ngIf="errorMsg.length > 0" class="alert alert-warning" role="alert">
@@ -156,51 +119,27 @@
       <div class="hydration-area">
         <div class="input-group mb-3">
           <label class="input-group-text" for="Concurrent">Hydration:</label>
-          <select
-            #hydrateB
-            (change)="setHydration(hydrateB.value)"
-            class="form-select"
-            name="Concurrent"
-            id=""
-          >
+          <select #hydrateB (change)="setHydration(hydrateB.value)" class="form-select" name="Concurrent" id="">
             <option value="true">YES</option>
             <option selected value="false">NO</option>
           </select>
         </div>
         <div class="input-group mb-3">
-          <label class="input-group-text" for="Concurrent"
-            >Concurrent Hydration:</label
-          >
-          <select
-            #concurrentB
-            (change)="setConcurrent(concurrentB.value)"
-            class="form-select"
-            name="Concurrent"
-            id=""
-          >
+          <label class="input-group-text" for="Concurrent">Concurrent Hydration:</label>
+          <select #concurrentB (change)="setConcurrent(concurrentB.value)" class="form-select" name="Concurrent" id="">
             <option value="true">YES</option>
             <option selected value="false">NO</option>
           </select>
         </div>
         <div class="input-group">
           <label class="input-group-text" for="Amount">Amount:</label>
-          <input
-            #hydraMls
-            (keyup)="sethydraMls(+hydraMls.value)"
-            class="form-control"
-            type="number"
-            placeholder="50, 250, 500 OR 1000"
-          />
+          <input #hydraMls (keyup)="sethydraMls(+hydraMls.value)" class="form-control" type="number"
+            placeholder="50, 250, 500 OR 1000" />
         </div>
         <div class="input-group">
           <label class="input-group-text" for="hyFrequency">Frequency:</label>
-          <select
-            #hydrafreq
-            (change)="setHydraFreq(hydrafreq.value)"
-            class="form-select"
-            name="hyFrequency"
-            id=""
-          >
+          <select #hydrafreq (change)="setHydraFreq(hydrafreq.value)" class="form-select" name="hyFrequency" id="">
+            <option value="">SELECT FREQUENCY</option>
             <option value="PRIOR TO">PRE</option>
             <option value="POST TO">POST</option>
             <option value="PRIOR TO AND POST">PRE & POST</option>
@@ -228,22 +167,15 @@
     <mat-tab label="Diphenhydramine">
       <div class="access_selection">
         <label for="DIPHEN">SELECT DOSE:</label>
-        <button
-          class="{{ diphen.status }}"
-          (click)="setDiphenDoseSelected(diphen)"
-          *ngFor="let diphen of diphenDoses"
-        >
+        <button class="{{ diphen.status }}" (click)="setDiphenDoseSelected(diphen)" *ngFor="let diphen of diphenDoses">
           {{ diphen.dose }}
         </button>
       </div>
 
       <div class="access_selection">
         <label for="dipfreq">DOES IT REPEAT:</label>
-        <button
-          class="{{ diphenfrq.status }}"
-          (click)="setDiphenFreqSelected(diphenfrq)"
-          *ngFor="let diphenfrq of diphenFreq"
-        >
+        <button class="{{ diphenfrq.status }}" (click)="setDiphenFreqSelected(diphenfrq)"
+          *ngFor="let diphenfrq of diphenFreq">
           {{ diphenfrq.freq }}
         </button>
       </div>
@@ -268,22 +200,14 @@
       <div class="apapArea">
         <div class="access_selection">
           <label for="DIPHEN">SELECT DOSE:</label>
-          <button
-            class="{{ apap.status }}"
-            (click)="setApapDoseSelected(apap)"
-            *ngFor="let apap of apapDoses"
-          >
+          <button class="{{ apap.status }}" (click)="setApapDoseSelected(apap)" *ngFor="let apap of apapDoses">
             {{ apap.dose }}
           </button>
         </div>
 
         <div class="access_selection">
           <label for="dipfreq">DOES IT REPEAT:</label>
-          <button
-            class="{{ apapfrq.status }}"
-            (click)="setApapFreqSelected(apapfrq)"
-            *ngFor="let apapfrq of apapFreq"
-          >
+          <button class="{{ apapfrq.status }}" (click)="setApapFreqSelected(apapfrq)" *ngFor="let apapfrq of apapFreq">
             {{ apapfrq.freq }}
           </button>
         </div>
@@ -311,10 +235,11 @@
       CREATE SUPPLIES
     </button>
   </div>
-
+  <h2>MD SUPPLIES  -<span>REQUIRES IMAGE ATTACHED</span></h2>
   <table class="table table1 table-success">
     <thead>
       <tr>
+        <th>COMPLETE</th>
         <th>IRC</th>
         <th>NDC</th>
         <th>NAME</th>
@@ -325,14 +250,43 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let supply of displayedSupplies">
+      <tr *ngFor="let supply of mdDisplayedSupplies" class="{{supply.status}} {{supply.required}}" >
+        <td><input #supStat (change)="markComplete(supStat.value, supply)" type="checkbox"></td>
         <td>{{ supply.IRC }}</td>
         <td>{{ supply.NDC }}</td>
         <td>{{ supply.name }}</td>
         <td>{{ supply.prescriber }}</td>
         <td>{{ supply.qty }}</td>
         <td>{{ supply.sig }}</td>
-        <td>{{ supply.notes }}</td>
+        <td class="notes" >{{ supply.notes }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>CVS SUPPLIES -<span>NO IMAGE ATTACHED REQUIRED</span></h2>
+  <table class="table table1 table-success">
+    <thead>
+      <tr>
+        <th>COMPLETE</th>
+        <th>IRC</th>
+        <th>NDC</th>
+        <th>NAME</th>
+        <th>PRESCRIBER</th>
+        <th>QUANTITY</th>
+        <th>SIG</th>
+        <th>NOTES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let supply of cvsDisplayedSupplies" class="{{supply.status}} {{supply.required}}" >
+        <td><input #supStat (change)="markComplete(supStat.value, supply)" type="checkbox"></td>
+        <td>{{ supply.IRC }}</td>
+        <td>{{ supply.NDC }}</td>
+        <td>{{ supply.name }}</td>
+        <td>{{ supply.prescriber }}</td>
+        <td>{{ supply.qty }}</td>
+        <td>{{ supply.sig }}</td>
+        <td class="notes" >{{ supply.notes }}</td>
       </tr>
     </tbody>
   </table>

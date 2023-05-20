@@ -1,0 +1,179 @@
+[
+    {
+      "name": "Gammagard 10%",
+      "strength": 10,
+      "vialSizes": [
+        30,
+        20,
+        10,
+        5,
+        2.5,
+        1
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Hizentra 20%",
+      "strength": 5,
+      "vialSizes": [
+        10,
+        4,
+        2,
+        1
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Hizentra PFS",
+      "strength": 5,
+      "vialSizes": [
+        4,
+        2,
+        1
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Cuvitru",
+      "strength": 5,
+      "vialSizes": [
+        10,
+        8,
+        4,
+        2,
+        1
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Gamunex 10%",
+      "strength": 10,
+      "vialSizes": [
+        40,
+        20,
+        10,
+        5,
+        2.5,
+        1
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Cutaquig",
+      "strength": 6,
+      "vialSizes": [
+        8,
+        4,
+        2,
+        1
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Xembify",
+      "strength": 5,
+      "vialSizes": [
+        10,
+        4,
+        2,
+        1
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Octagam 5%",
+      "strength": 20,
+      "vialSizes": [
+        10,
+        5,
+        2.5,
+        1
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Octagam 10%",
+      "strength": 10,
+      "vialSizes": [
+        30,
+        20,
+        10,
+        5,
+        2
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Privigen",
+      "strength": 10,
+      "vialSizes": [
+        40,
+        20,
+        10,
+        5
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Panzyga",
+      "strength": 10,
+      "vialSizes": [
+        30,
+        20,
+        10,
+        5,
+        2.5,
+        1
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Gammaplex",
+      "strength": 10,
+      "vialSizes": [
+        20,
+        10,
+        5
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Gamastan",
+      "strength": 10,
+      "vialSizes": [
+        10,
+        2
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Gammagard S/D 10%",
+      "strength": 10,
+      "vialSizes": [
+        10,
+        5
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Gammagard S/D 5%",
+      "strength": 20,
+      "vialSizes": [
+        10,
+        5
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Hyqvia",
+      "strength": 10.5,
+      "vialSizes": [
+        30,
+        20,
+        10,
+        5,
+        2.5
+      ],
+      "active": "inActive"
+    }
+  ]

@@ -1,1 +1,25 @@
-<p>navigation works!</p>
+<header>
+    <nav class="navbar">
+      <div class="navbar_container">
+        <div
+          class="navbar__toggle"
+          id="mobile-menu"
+          class="{{ mobileM }}"
+          (click)="mobile()"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar_menu nav" class="{{ mobileMenu }}">
+          <li class="nav-item" class="navbar__item" (click)="mobile()">
+            <a class="nav-link" routerLink="" >Supply Calculator</a>
+          </li>
+          <li class="nav-item" class="navbar__item" (click)="mobile()">
+            <a class="nav-link" routerLink="clarification" >Clarification Builder</a>
+          </li>
+        </ul>
+        <button class="btn btn-danger" ><a href="/calculator-app/">Clear Form</a></button>
+      </div>
+    </nav>
+  </header>

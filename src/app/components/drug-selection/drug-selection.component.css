@@ -139,3 +139,26 @@ tr, table {
 .premeds {
     padding: 10vh 0vw;
 }
+
+.complete {
+  --bs-table-bg: rgb(150, 150, 150);
+  color: white;
+}
+
+
+h2 {
+  text-align: center;
+}
+
+h2 span {
+  color: red;
+}
+
+.require {
+  color: rgb(194, 0, 0);
+  font-weight: 400;
+}
+
+.notes {
+  color: rgb(128, 44, 44);
+}

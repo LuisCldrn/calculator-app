@@ -3,6 +3,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { Drug } from 'src/app/common/drug';
 import { Supply } from 'src/app/common/supply';
 import { Vials } from 'src/app/common/vials';
+import { ClarificationListService } from 'src/app/services/clarification-list.service';
 import { DrugListService } from 'src/app/services/drug-list.service';
 import { SuppliesService } from 'src/app/services/supplies.service';
 
@@ -18,6 +19,7 @@ export class DrugSelectionComponent implements OnInit {
     public drugListService: DrugListService,
     public matTabGroup: MatTabsModule,
     public suppliesService: SuppliesService,
+    public clarificationService: ClarificationListService,
   ) {}
   errorMsg: string = '';
   selectedDrug!: Drug;
@@ -68,6 +70,10 @@ export class DrugSelectionComponent implements OnInit {
     this.admin.status = 'isActive';
     
   }
+
+  setVials(num: number) {
+    this.numberOfVials = num;
+  }
   //select a drug to make it active and remove others active class
   selectDrug(drug: Drug) {
     if (this.selectedDrug !== undefined) {
@@ -81,6 +87,12 @@ export class DrugSelectionComponent implements OnInit {
     this.dose = +num;
     this.unchangedDose = +num;
     this.doseMls = this.selectedDrug.strength * +num;
+  }
+
+  printArray() {
+    let exportData = this.clarificationService.clarificationList;
+
+    console.log(JSON.stringify(exportData, null, 2));
   }
 
   calculateVials(
@@ -111,7 +123,8 @@ export class DrugSelectionComponent implements OnInit {
         } while (this.dose - this.selectedDrug.vialSizes[i] >= 0 === true);
       }
     }
-    this.numberOfVials = this.vialsToUse.length
+    this.numberOfVials === 0 && (this.numberOfVials = this.vialsToUse.length);
+
     if (this.dose > 0) {
       this.errorMsg =
         'Please Double check dose and vial sizes. As does cannot be made with vials';
@@ -155,8 +168,8 @@ export class DrugSelectionComponent implements OnInit {
   calcVialsFields() {
     this.vialDisplay.forEach((e) => {
       if (
-        this.selectedDrug === this.drugListService.GammagardSD10 ||
-        this.selectedDrug === this.drugListService.GammagardSD5
+        this.selectedDrug.name === 'Gammagard S/D 5%' ||
+        this.selectedDrug.name === 'Gammagard S/D 10%'
       ) {
         e.dispenseMls = e.amount * this.numberOfInf;
       } else {
@@ -187,15 +200,14 @@ export class DrugSelectionComponent implements OnInit {
 
   mainDrugSigBuilder() {
     switch (true) {
-      case this.selectedDrug === this.drugListService.Hyqvia: {
-        let sig = `Infuse every 3 weeks`;
+      case this.selectedDrug.name === 'Hyqvia': {
+        let sig = `ADMINISTER HYALURONIDASE THEN SUBCUTANEOUSLY INFUSE HYQVIA ${this.unchangedDose}GM (${this.unchangedDose*10}ML) ${this.frequency}`;
         this.updateVialSig(sig);
         return;
       }
-      case this.selectedDrug ===
-        (this.drugListService.GammagardSD10 ||
-          this.drugListService.GammagardSD5): {
-        let sig = 'gammagard sig';
+      case (this.selectedDrug.name === 'Gammagard S/D 5%' ||
+        this.selectedDrug.name === 'Gammagard S/D 10%'): {
+        let sig = `RECONSTITUTE AS DIRECTED TO ${this.unchangedDose/this.doseMls * 100}%. INFUSE ${this.unchangedDose}GM (${this.doseMls}ML) INTRAVENOUSLY ${this.frequency}`;
         this.updateVialSig(sig);
         return;
       }
@@ -278,7 +290,7 @@ export class DrugSelectionComponent implements OnInit {
   diphenDoses: Doses[] = [
     new Doses('25MG', 1, '1 CAPSULE', 'inActive'),
     new Doses('50MG', 2, '2 CAPSULES', 'inActive'),
-    new Doses('25-50MG', 2, '1-2 CAPULE(S)', 'inActive'),
+    new Doses('25-50MG', 2, '1-2 CAPSULE(S)', 'inActive'),
   ];
 
   diphenFreq: preFreq[] = [
@@ -460,76 +472,150 @@ export class DrugSelectionComponent implements OnInit {
   //SUPPLIES CALCULATIONS
 
   calculateSupplyQty(num: number): any {
-    switch(true) {
-      case (num===1): 
-        {return 1}
-      case (num===2):
-        {return 3}
-      case (num===3):
-        {return this.numberOfInf + 1 }
-      case (num === 4):
-        {return this.numberOfInf * 3 + 1}
-      case (num === 5):
+    switch (true) {
+      case num === 1: {
+        return 1;
+      }
+      case num === 2: {
+        return 3;
+      }
+      case num === 3: {
+        return this.numberOfInf + 1;
+      }
+      case num === 4: {
+        return this.numberOfInf * 3 + 1;
+      }
+      case num === 5:
         return this.numberOfInf * 3;
-      case (num === 6):
-        return 25;
-      case (num === 7):
-        return 20;
-      case (num === 8):
-        return this.doseMls<=250? this.numberOfInf + 1:  0;
-      case (num === 9):
-        if (this.doseMls<=500 && this.doseMls>250) {return this.numberOfInf + 1} else return 0
-      case (num === 10):
-        if (this.doseMls<=1000 && this.doseMls>500) {return this.numberOfInf + 1} else return 0
-      case (num === 11):
-        if (this.hydrationB==="true") {return this.numberOfInf + 1} else return 1
-      case (num === 12): 
-        if (this.conseqB === "true") {return this.numberOfInf * 15} else return 0
-      case (num === 13):
-        return this.numberOfInf * 25
-      case (num === 14):
-        return this.numberOfInf * 50
-      case (num === 15):
-        if(this.admin.admin === 'SQ'){return this.numberOfVials + 1} else return this.numberOfVials
-      case (num === 16):
-        return this.concurrent === "true" ? this.numberOfInf + 1 : 0;
-      case (num=== 17): 
+      case num === 6:
+        return this.numberOfInf > 1 ? Math.ceil(this.daySupply / 28) * 25 :  25;
+      case num === 7:
+        return this.numberOfInf > 1 ? Math.ceil(this.daySupply / 28) * 20 :  20;
+      case num === 8:
+        return this.doseMls <= 250 ? this.numberOfInf + 1 : 0;
+      case num === 9:
+        if (this.doseMls <= 500 && this.doseMls > 250) {
+          return this.numberOfInf + 1;
+        } else return 0;
+      case num === 10:
+        if (this.doseMls <= 1000 && this.doseMls > 500) {
+          return this.numberOfInf + 1;
+        } else return 0;
+      case num === 11:
+        if (this.hydrationB === 'true') {
+          return this.numberOfInf + 1;
+        } else return 1;
+      case num === 12:
+        if (this.conseqB === 'true') {
+          return this.numberOfInf * 15;
+        } else return 0;
+      case num === 13:
+        return this.numberOfInf * 25;
+      case num === 14:
+        return this.numberOfInf * 50;
+      case num === 15:
+        if (this.selectedDrug.name === "Hizentra PFS") {
+          return 0;
+        } else if (this.admin.admin === 'SQ') {
+          return this.numberOfVials * this.numberOfInf + 1;
+        } else return this.numberOfVials * this.numberOfInf;
+      case num === 16:
+        return this.concurrent === 'true' ? this.numberOfInf + 1 : 0;
+      case num === 17:
         return 100;
-      case (num===18):
+      case num === 18:
         return 200;
-      case (num===19):
-        return ( this.admin.admin === 'SQ' ) ? Math.ceil(this.doseMls/50) * this.numberOfInf + 1 : this.numberOfInf + 1;  
-      case (num===20):
-        return (this.admin.admin === 'HYQVIA') ? (this.numberOfInf + 1) * 2 : this.numberOfInf + 1;
-      case (num===21):
-        return this.highestPremedMls <= 3 ? this.premedCount * this.numberOfInf +1 : 0;
-      case (num===22):
-        return this.highestPremedMls > 3 ? this.premedCount * this.numberOfInf +1 : 0;
-      case (num===23):
-        return this.premedCount * this.numberOfInf + 1;
-      case (num===24):
+      case num === 19:
+        return this.admin.admin === 'SQ'
+          ? Math.ceil(this.doseMls / 50) * this.numberOfInf + 1
+          : this.numberOfInf + 1;
+      case num === 20:
+        return this.admin.admin === 'HYQVIA'
+          ? (this.numberOfInf + 1) * 2
+          : this.numberOfInf + 1;
+      case num === 21:
+        return this.highestPremedMls <= 3 && this.highestPremedMls > 0
+          ? this.premedCount * this.numberOfInf + 1
+          : 0;
+      case num === 22:
+        return this.highestPremedMls > 3
+          ? this.premedCount * this.numberOfInf + 1
+          : 0;
+      case num === 23:
+        return this.premedCount > 0
+          ? this.premedCount * this.numberOfInf + 1
+          : 0;
+      case num === 24:
         return this.numberOfInf * 15;
-      case (num===25):
-        return (50*this.numberOfInf * this.piccLumens) + (20 * (this.daySupply - this.numberOfInf) * this.piccLumens )
-      case (num===26):
-        return (12.5*this.numberOfInf * this.piccLumens) + (5 * (this.daySupply - this.numberOfInf) * this.piccLumens )
-      case (num===27):
-        return Math.round( this.unchangedDose * 0.5 ) < 10 ? this.numberOfInf + 1: 0;
-      case (num===28):
-        return Math.round( this.unchangedDose * 0.5 ) < 20 ? this.numberOfInf + 1: 0;
-      case (num===29):
-        return Math.round( this.unchangedDose * 0.5 ) < 30 ? this.numberOfInf + 1: 0;
+      case num === 25:
+        return (
+          50 * this.numberOfInf * this.piccLumens +
+          20 * (this.daySupply - this.numberOfInf) * this.piccLumens
+        );
+      case num === 26:
+        return (
+          12.5 * this.numberOfInf * this.piccLumens +
+          5 * (this.daySupply - this.numberOfInf) * this.piccLumens
+        );
+      case num === 27:
+        return (Math.round(this.unchangedDose * 0.5) < 10 && Math.round(this.unchangedDose * 0.5) > 0)
+          ? this.numberOfInf + 1
+          : 0;
+      case num === 28:
+        return (Math.round(this.unchangedDose * 0.5) < 20 && Math.round(this.unchangedDose * 0.5) >= 10)
+          ? this.numberOfInf + 1
+          : 0;
+      case num === 29:
+        return (Math.round(this.unchangedDose * 0.5) < 30 && Math.round(this.unchangedDose * 0.5) >= 20)
+          ? this.numberOfInf + 1
+          : 0;
+      case num === 30:
+        return this.doseMls < 500 ? this.numberOfInf + 1 : 0;
+      case num === 31:
+        return this.selectedDrug.name === 'Hizentra PFS'
+          ? Math.ceil(this.doseMls / 50) * this.numberOfInf + 1
+          : 0;
     }
   }
 
   displayedSupplies: Supply[] = [];
+  mdDisplayedSupplies: Supply[] = [];
+  cvsDisplayedSupplies: Supply[] = [];
 
   calculateSupplies() {
+    this.selectedDrug.name === 'Hyqvia' && (this.admin.admin = 'HYQVIA'); 
     this.displayedSupplies = this.suppliesService.suppliesList.filter(e => e.admin.includes(this.admin.admin));
+    //calculate qty
     this.displayedSupplies.forEach(e => {
       e.qty = this.calculateSupplyQty(e.formula);
+    }
+    )
+
+    //premark supplies gray if qty is 0
+    this.displayedSupplies.forEach(e => {
+      if (e.qty===0) {e.status = 'complete'}
     })
+
+    //filter to mdo and cvs supplies
+    this.mdDisplayedSupplies = this.displayedSupplies.filter(e => e.prescriber === 'MD');
+    this.cvsDisplayedSupplies = this.displayedSupplies.filter(e => e.prescriber === 'CVS');
+
   }
+  //mark a supply complete by changing supply attribute to complete mark back to pending if clicked again
+  markComplete(status:string, supply: Supply) {
+    console.log(status)
+    if(supply.status === 'pending') {
+      supply.status = 'complete';
+    }
+
+    else {
+      supply.status = 'pending'
+    }
+
+  }
+
+
+
 
 }
 
