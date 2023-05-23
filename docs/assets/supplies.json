@@ -817,7 +817,7 @@
       "prescriber": "MD",
       "formula": 1,
       "qty": 0,
-      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "sig": "DRAW _______ PRIOR TO IG EVERY _______",
       "notes": "",
       "type": "ALL",
       "status": "pending",

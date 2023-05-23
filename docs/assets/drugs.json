@@ -128,7 +128,17 @@
       "active": "inActive"
     },
     {
-      "name": "Gammaplex",
+      "name": "Gammaplex 5%",
+      "strength": 20,
+      "vialSizes": [
+        20,
+        10,
+        5
+      ],
+      "active": "inActive"
+    },
+    {
+      "name": "Gammaplex 10%",
       "strength": 10,
       "vialSizes": [
         20,

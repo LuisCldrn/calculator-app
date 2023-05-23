@@ -477,7 +477,7 @@ export class DrugSelectionComponent implements OnInit {
         return 1;
       }
       case num === 2: {
-        return 3;
+        return 4;
       }
       case num === 3: {
         return this.numberOfInf + 1;
