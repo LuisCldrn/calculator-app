@@ -902,5 +902,23 @@
       "type": "ALL",
       "status": "pending",
       "required": "require"
+    },
+    {
+      "IRC": 35282,
+      "NDC": "00000-0352-82",
+      "name": "5 MICRON FILTER (USED FOR GAMMAGARD S/D)",
+      "admin": [
+        "PIV",
+        "PORT",
+        "PICC"
+      ],
+      "prescriber": "MD",
+      "formula": 32,
+      "qty": 0,
+      "sig": "USE AS DIRECTED TO ADMINISTER IG",
+      "notes": "",
+      "type": "ALL",
+      "status": "pending",
+      "required": "nrequire"
     }
   ]

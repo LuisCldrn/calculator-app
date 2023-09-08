@@ -89,6 +89,10 @@ export class DrugSelectionComponent implements OnInit {
     this.doseMls = this.selectedDrug.strength * +num;
   }
 
+  setPicc(num: number) {
+    this.piccLumens = num;
+  }
+
   printArray() {
     let exportData = this.clarificationService.clarificationList;
 
@@ -548,13 +552,14 @@ export class DrugSelectionComponent implements OnInit {
       case num === 24:
         return this.numberOfInf * 15;
       case num === 25:
+        console.log(this.numberOfInf, this.piccLumens, this.daySupply, this.numberOfInf)
         return (
           50 * this.numberOfInf * this.piccLumens +
           20 * (this.daySupply - this.numberOfInf) * this.piccLumens
-        );
+         ) ;
       case num === 26:
         return (
-          12.5 * this.numberOfInf * this.piccLumens +
+          Math.ceil(12.5 * this.numberOfInf * this.piccLumens) +
           5 * (this.daySupply - this.numberOfInf) * this.piccLumens
         );
       case num === 27:
@@ -575,6 +580,11 @@ export class DrugSelectionComponent implements OnInit {
         return this.selectedDrug.name === 'Hizentra PFS'
           ? Math.ceil(this.doseMls / 50) * this.numberOfInf + 1
           : 0;
+      case num === 32:
+        if ( this.selectedDrug.name === "Gammagard S/D 10%" || this.selectedDrug.name === 'Gammagard S/D 5%') {
+          return this.numberOfInf + 1
+        }
+        else {return 0}
     }
   }
 

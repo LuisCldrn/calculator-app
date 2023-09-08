@@ -69,7 +69,7 @@
     </div>
     <div class="PICC-input" *ngIf="this.admin?.admin === 'PICC'">
       <div class="form-floating mb-3">
-        <input id="floatingInput" type="number" class="form-control" />
+        <input #picc (keyup)="setPicc(+picc.value)" id="floatingInput" type="number" class="form-control" />
         <label for="floatingInput">Number of Lumens (PICC only)</label>
       </div>
     </div>
@@ -84,7 +84,6 @@
         " type="submit">
         CALCULATE
       </button>
-      <button (click)="printArray()" > print</button>
     </div>
   </div>
   <div *ngIf="errorMsg.length > 0" class="alert alert-warning" role="alert">
